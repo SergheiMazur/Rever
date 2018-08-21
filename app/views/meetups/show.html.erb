@@ -1,64 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @meetup.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @meetup.title %>
+  </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @meetup.location %>
-</p>
+  <p>
+    <strong>Location:</strong>
+    <%= @meetup.location %>
+  </p>
 
-<p>
-  <strong>Lat:</strong>
-  <%= @meetup.lat %>
-</p>
+  <p>
+    <strong>Start time:</strong>
+    <%= @meetup.start_time %>
+  </p>
 
-<p>
-  <strong>Lng:</strong>
-  <%= @meetup.lng %>
-</p>
+  <p>
+    <strong>End time:</strong>
+    <%= @meetup.end_time %>
+  </p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @meetup.start_time %>
-</p>
+  <p>
+    <strong>Game:</strong>
+    <%= @meetup.game.name %>
+  </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @meetup.end_time %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @meetup.user.email %>
+  </p>
 
-<p>
-  <strong>Game:</strong>
-  <%= @meetup.game %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @meetup.user.email %>
-</p>
-
-<% if current_user == @meetup.user %>
-<p>
-<strong>Guest:</strong>
+  <% if current_user == @meetup.user %>
+  <p>
+  <strong>Guest:</strong>
+    <% @guests.each do |guest| %>
+      <%= guest.user.email %>
+      <%= guest.current_status %>
+      <%= link_to "accept", accept_guest_path(guest), class: "btn btn-primary" %>
+      <%= link_to "reject", reject_guest_path(guest), class: "btn btn-primary" %>
+    <% end %>
+  </p>
+  <% elsif !@meetup.booked_by?(current_user) %>
+    <%= link_to "book", meetup_book_path(@meetup), class: "btn btn-primary" %>
+  <% end %>
   <% @guests.each do |guest| %>
-    <%= guest.user.email %>
-    <%= guest.current_status %>
-    <%= link_to "accept", accept_guest_path(guest), class: "btn btn-primary" %>
-    <%= link_to "reject", reject_guest_path(guest), class: "btn btn-primary" %>
+    <% if guest.user == current_user && guest.meetup == @meetup %>
+      <strong><%= guest.current_status %></strong>
+    <% end %>
   <% end %>
-</p>
-<% elsif !@meetup.booked_by?(current_user) %>
-  <%= link_to "book", meetup_book_path(@meetup), class: "btn btn-primary" %>
-<% end %>
-<strong>Guest:</strong>
-<% @guests.each do |guest| %>
-  <% if guest.user == current_user && guest.meetup == @meetup %>
-    <strong><%= guest.current_status %></strong>
-  <% end %>
-<% end %>
 
-<%= link_to 'Edit', edit_meetup_path(@meetup) %> |
-<%= link_to 'Back', meetups_path %>
+  <%= link_to 'Edit', edit_meetup_path(@meetup) %> |
+  <%= link_to 'Back', meetups_path %>
+</div>
+
+

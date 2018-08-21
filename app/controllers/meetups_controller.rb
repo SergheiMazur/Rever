@@ -30,7 +30,7 @@ class MeetupsController < ApplicationController
   # POST /meetups
   def create
     @meetup = Meetup.new(meetup_params)
-
+    @meetup.user = current_user
       if @meetup.save
         redirect_to @meetup, notice: 'Meetup was successfully created.'
       else
@@ -70,6 +70,6 @@ class MeetupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meetup_params
-      params.require(:meetup).permit(:title, :location, :lat, :lng, :start_time, :end_time, :game_id, :user_id)
+      params.require(:meetup).permit(:title, :location, :start_time, :end_time, :game_id)
     end
 end
