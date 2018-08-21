@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'guests/new'
   get 'guests/create'
+  get 'profile', to: 'profiles#index', as: 'profile'
   resources :meetups
   devise_for :users
   root to: 'pages#home'

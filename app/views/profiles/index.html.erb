@@ -1,0 +1,24 @@
+  <%= link_to("Hostings", profile_path(type: "host"))  %>
+  <%= link_to("Attending", profile_path(type: "guest"))  %>
+
+  <tbody>
+    <% @meetups.each do |meetup| %>
+      <tr>
+        <td><%= meetup.title %></td>
+        <td><%= meetup.location %></td>
+        <td><%= meetup.lat %></td>
+        <td><%= meetup.lng %></td>
+        <td><%= meetup.start_time %></td>
+        <td><%= meetup.end_time %></td>
+        <td><%= meetup.game %></td>
+        <td><%= meetup.user %></td>
+        <td><%= link_to 'Show', meetup %></td>
+        <td><%= link_to 'Edit', edit_meetup_path(meetup) %></td>
+        <td><%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+     <% end %>
+   </tbody>
+  </table>
+
+
+
