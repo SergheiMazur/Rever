@@ -1,7 +1,7 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: black;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -37,12 +37,43 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: #DDDDDD;
+  background:#1AAB8A;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
-  text-decoration: none;
+  background:#fff;
+  color:#1AAB8A;
+}
+
+.navbar-wagon-link:before, .navbar-wagon-link:after {
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+
+.navbar-wagon-link:after {
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+.navbar-wagon-link:hover:before, .navbar-wagon-link:hover:after {
+  width:100%;
+  transition:800ms ease all;
 }
 
 /* Dropdown menu */
@@ -75,3 +106,6 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+
+
