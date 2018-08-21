@@ -1,5 +1,6 @@
 class MeetupsController < ApplicationController
   before_action :set_meetup, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :authenticate_user!, :only => [:index]
 
   # GET /meetups
   # GET /meetups.json

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'guests/new'
+  get 'guests/create'
   resources :meetups
   devise_for :users
   root to: 'pages#home'

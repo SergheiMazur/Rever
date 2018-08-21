@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_194741) do
+ActiveRecord::Schema.define(version: 2018_08_20_205223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2018_08_20_194741) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["platform_id"], name: "index_games_on_platform_id"
+  end
+
+  create_table "guests", force: :cascade do |t|
+    t.string "current_status"
+    t.bigint "user_id"
+    t.bigint "meetup_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meetup_id"], name: "index_guests_on_meetup_id"
+    t.index ["user_id"], name: "index_guests_on_user_id"
   end
 
   create_table "meetups", force: :cascade do |t|
@@ -59,6 +69,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_194741) do
   end
 
   add_foreign_key "games", "platforms"
+  add_foreign_key "guests", "meetups"
+  add_foreign_key "guests", "users"
   add_foreign_key "meetups", "games"
   add_foreign_key "meetups", "users"
 end
