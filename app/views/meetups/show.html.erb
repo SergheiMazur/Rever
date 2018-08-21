@@ -42,22 +42,22 @@
 
 <% if current_user == @meetup.user %>
 <p>
-    <strong>Guest:</strong>
-    <% @guests.each do |guest| %>
-      <%= guest.user.email %>
-      <button action="#">Accept</button>
-      <button action="#">Reject</button>
-    <% end %>
+<strong>Guest:</strong>
+  <% @guests.each do |guest| %>
+    <%= guest.user.email %>
+    <%= guest.current_status %>
+    <%= link_to "accept", accept_guest_path(guest), class: "btn btn-primary" %>
+    <%= link_to "reject", reject_guest_path(guest), class: "btn btn-primary" %>
+  <% end %>
 </p>
-<% else %>
-     <strong>Guest:</strong>
-      <% @guests.each do |guest| %>
-        <% if guest.user == current_user && guest.meetup == @meetup %>
-          <strong><%= guest.current_status %></strong>
-        <% else %>
-          <button action="#">Book</button>
-        <% end %>
-      <% end %>
+<% elsif !@meetup.booked_by?(current_user) %>
+  <%= link_to "book", meetup_book_path(@meetup), class: "btn btn-primary" %>
+<% end %>
+<strong>Guest:</strong>
+<% @guests.each do |guest| %>
+  <% if guest.user == current_user && guest.meetup == @meetup %>
+    <strong><%= guest.current_status %></strong>
+  <% end %>
 <% end %>
 
 <%= link_to 'Edit', edit_meetup_path(@meetup) %> |

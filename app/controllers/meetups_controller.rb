@@ -1,5 +1,5 @@
 class MeetupsController < ApplicationController
-  before_action :set_meetup, only: [:show, :edit, :update, :destroy]
+  before_action :set_meetup, only: [:show, :edit, :update, :destroy, :book]
   skip_before_action :authenticate_user!, :only => [:index]
 
   # GET /meetups
@@ -45,7 +45,16 @@ class MeetupsController < ApplicationController
       else
         render :edit
       end
+
   end
+
+
+  #To Book
+  def book
+    @meetup.guests.create(current_status: "pending", user: current_user)
+    redirect_to meetup_path(@meetup)
+  end
+
 
   # DELETE /meetups/1
   def destroy
