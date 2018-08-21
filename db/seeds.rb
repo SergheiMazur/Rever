@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-Platform.destroy_all
-Game.destroy_all
-Meetup.destroy_all
 Guest.destroy_all
+Meetup.destroy_all
+Game.destroy_all
+Platform.destroy_all
+
+
 User.destroy_all
 
 
@@ -38,7 +39,7 @@ end
 
 meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "Montreal", lat:0, lng:0, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
 meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "Montreal", lat:0, lng:0, start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, user:user_host, game:Game.find(Game.first.id + 4))
-
+meetup3 = Meetup.create!(title: "this is game", location: "Montreal", lat:0, lng:0, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
 
 
 Guest.create!(current_status:"Pending", user:user2_guest, meetup:meetup1)
