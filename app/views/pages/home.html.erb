@@ -1,24 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
 
-<%= form_tag meetups_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a meetup"
-  %>
-<% end %>
 <div class="container">
-  <div class="row">
-    <div
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>">
+  <h1>Find your party ;)</h1>
+  <%= form_tag meetups_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a meetup"
+    %>
+  <% end %>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>">
+      </div>
     </div>
   </div>
 </div>
+
+
 
 
 
