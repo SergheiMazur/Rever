@@ -37,12 +37,16 @@ games.each_with_index do |game, index|
     )
 end
 
-meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "Montreal", lat:0, lng:0, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
-meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "Montreal", lat:0, lng:0, start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, user:user_host, game:Game.find(Game.first.id + 4))
-meetup3 = Meetup.create!(title: "this is game", location: "Montreal", lat:0, lng:0, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
+meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "Montreal", lat:45.578041, lng:-73.5556777, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
+meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "Montreal", lat:45.543066, lng:-73.5722427, start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, user:user_host, game:Game.find(Game.first.id + 4))
+meetup3 = Meetup.create!(title: "this is game", location: "Montreal", lat:45.5026023, lng:-73.5660646, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
+meetup4 = Meetup.create!(title: "this is game", location: "Montreal", lat:45.5026023, lng:-73.5660646, start_time: Time.now, end_time: Time.now + 1*60*60, user:user2_guest, game:Game.find(Game.first.id + 2))
 
 
 Guest.create!(current_status:"Pending", user:user2_guest, meetup:meetup1)
+Guest.create!(current_status:"Pending", user:user_host, meetup:meetup4)
+
+
 
 
 

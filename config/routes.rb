@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   get 'guests/new'
   get 'guests/create'
+
   get 'meetups/:id/book', to: "meetups#book", as: "meetup_book"
   get 'guests/:id/accept', to: "guests#accept", as: "accept_guest"
   get 'guests/:id/reject', to: "guests#reject", as: "reject_guest"
+  get 'profile', to: 'profiles#index', as: 'profile'
+
   resources :meetups
   devise_for :users
   root to: 'pages#home'
