@@ -5,6 +5,12 @@ class MeetupsController < ApplicationController
   # GET /meetups
   def index
     @meetups = Meetup.all
+    if params[:query].present?
+      puts params[:query].class
+      @meetups = Meetup.search_by_meetup_title_and_game_name(params[:query])
+    else
+      @meetups = Meetup.all
+    end
   end
 
   # GET /meetups/1
