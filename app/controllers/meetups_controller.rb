@@ -1,15 +1,13 @@
 class MeetupsController < ApplicationController
   before_action :set_meetup, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :authenticate_user!, :only => [:index]
+  skip_before_action :authenticate_user!, :only => [:index]
 
   # GET /meetups
-  # GET /meetups.json
   def index
     @meetups = Meetup.all
   end
 
   # GET /meetups/1
-  # GET /meetups/1.json
   def show
   end
 
@@ -23,43 +21,29 @@ class MeetupsController < ApplicationController
   end
 
   # POST /meetups
-  # POST /meetups.json
   def create
     @meetup = Meetup.new(meetup_params)
 
-    respond_to do |format|
       if @meetup.save
-        format.html { redirect_to @meetup, notice: 'Meetup was successfully created.' }
-        format.json { render :show, status: :created, location: @meetup }
+        redirect_to @meetup, notice: 'Meetup was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @meetup.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /meetups/1
-  # PATCH/PUT /meetups/1.json
   def update
-    respond_to do |format|
       if @meetup.update(meetup_params)
-        format.html { redirect_to @meetup, notice: 'Meetup was successfully updated.' }
-        format.json { render :show, status: :ok, location: @meetup }
+        redirect_to @meetup, notice: 'Meetup was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @meetup.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   # DELETE /meetups/1
-  # DELETE /meetups/1.json
   def destroy
     @meetup.destroy
-    respond_to do |format|
-      format.html { redirect_to meetups_url, notice: 'Meetup was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to meetups_url, notice: 'Meetup was successfully destroyed.'
   end
 
   private
