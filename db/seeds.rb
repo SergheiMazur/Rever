@@ -46,3 +46,5 @@ Guest.create!(current_status:"Pending", user:user2_guest, meetup:meetup1)
 
 
 
+
+
