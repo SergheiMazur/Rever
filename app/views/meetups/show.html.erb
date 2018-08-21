@@ -37,8 +37,28 @@
 
 <p>
   <strong>User:</strong>
-  <%= @meetup.user %>
+  <%= @meetup.user.email %>
 </p>
+
+<% if current_user == @meetup.user %>
+<p>
+    <strong>Guest:</strong>
+    <% @guests.each do |guest| %>
+      <%= guest.user.email %>
+      <button action="#">Accept</button>
+      <button action="#">Reject</button>
+    <% end %>
+</p>
+<% else %>
+     <strong>Guest:</strong>
+      <% @guests.each do |guest| %>
+        <% if guest.user == current_user && guest.meetup == @meetup %>
+          <strong><%= guest.current_status %></strong>
+        <% else %>
+          <button action="#">Book</button>
+        <% end %>
+      <% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_meetup_path(@meetup) %> |
 <%= link_to 'Back', meetups_path %>

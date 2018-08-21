@@ -9,6 +9,7 @@ class MeetupsController < ApplicationController
 
   # GET /meetups/1
   def show
+    @guests = Guest.where(meetup:@meetup)
   end
 
   # GET /meetups/new
