@@ -1,10 +1,10 @@
-<h1><%= current_user.email %></h1>
+<h1><%= @user.email %></h1>
 
 
 
   <ul class="nav nav-tabs">
-    <li class="active"><%= link_to("Hostings", profile_path(type: "host"))  %></li>
-    <li><%= link_to("Attending", profile_path(type: "guest"))  %></li>
+    <li class="active"><%= link_to("Hostings", user_profile_path(type: "host"))  %></li>
+    <li><%= link_to("Attending", user_profile_path(type: "guest"))  %></li>
   </ul>
 
 <table class="table table-striped">
@@ -32,7 +32,7 @@
         <% if @host %>
           <td> <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %></td>
         <% else %>
-          <td><%= meetup.guests.find_by(user:current_user).current_status %></td>
+          <td><%= meetup.guests.find_by(user:@user).current_status %></td>
         <% end %>
       </tr>
      <% end %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'guests/:id/accept', to: "guests#accept", as: "accept_guest"
   get 'guests/:id/reject', to: "guests#reject", as: "reject_guest"
   get 'profile', to: 'profiles#index', as: 'profile'
+  get 'profile/:id', to: 'profiles#show', as: 'user_profile'
 
   resources :meetups
   devise_for :users
