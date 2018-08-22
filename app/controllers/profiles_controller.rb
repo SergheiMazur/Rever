@@ -2,10 +2,16 @@ class ProfilesController < ApplicationController
 
   # GET /profile
   def index
-    if params[:type] == "host"
-      @meetups = current_user.meetups
+    @host = true
+    if params[:type] == "guest"
+      @host = false
+      current_user_bookings = Guest.where(user:current_user)
+      @meetups = []
+      current_user_bookings.each do |booking|
+        @meetups << booking.meetup
+      end
     else
-      @meetups = current_user.guest_meetups
+      @meetups = current_user.meetups
     end
   end
 
