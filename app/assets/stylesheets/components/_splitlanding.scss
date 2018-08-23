@@ -33,11 +33,20 @@ body, h1 {
   color: white;
   background-color:blue;
   transition: all 1s ease-in-out;
+  background: url('https://i.amz.mshcdn.com/tFd4DH3Xeau73DbNfwD9WE7jAhs=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F812513%2F0d0fa3b6-7dce-4887-afd6-fef92aa8fe7f.jpg');
+   -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 #left {
   color: white;
-  background-color:gray;
   transition: all 1s ease-in-out;
 }
 
