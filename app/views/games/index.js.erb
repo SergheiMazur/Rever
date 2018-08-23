@@ -1,0 +1,12 @@
+$("#test").innerHTML = "";
+var availableGames = [];
+<% @games.each do |game| %>
+availableGames.push("<%= game.name %>")
+<% end %>
+$("#test").autocomplete({
+  source: availableGames,
+  messages: {
+        noResults: '',
+        results: function() {}
+    }
+})
