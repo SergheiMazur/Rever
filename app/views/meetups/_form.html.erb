@@ -1,17 +1,22 @@
-
-<%= simple_form_for(@meetup) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :location %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.association :game %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-post">
+        <h1>Meetup Form</h1>
+        <%= simple_form_for(@meetup) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <%= f.input :title, placeholder: "Pick a hangout name" %>
+            <%= f.input :location, placeholder: "Pick your location" %>
+            <%= select_tag(:platform_id, options_from_collection_for_select(@platforms, :id, :name)) %>
+            <%= f.association :game, prompt: "Pick your game!" %>
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</div>

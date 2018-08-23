@@ -1,25 +1,27 @@
 <div class="container-layout">
   <div class="flex-center flex-grow-1" id="right">
-    <div class="content">
-      <h1>HOST</h1>
-      <%= link_to "Create new host", new_meetup_path %>
+    <div class="contentleft">
+      <button class="btn-2">HOST a Hangout</button>
     </div>
   </div>
   <div class="flex-center flex-grow-1" id="left">
-    <div class="content">
-      <h1>PLAY</h1>
-      <div>
+    <div class="contentright">
+      <h2>Play Now:</h2>
+
+
+
+
       <%= form_tag meetups_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a meetup"
-      %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a hangout near you"
+        %>
       <% end %>
-      </div>
     </div>
   </div>
 </div>
+
 
 
 
