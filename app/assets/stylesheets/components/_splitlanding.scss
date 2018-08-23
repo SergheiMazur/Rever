@@ -21,7 +21,11 @@ body, h1 {
   flex-basis: 20%;
 }
 
-.content {
+.contentright {
+  text-align: center;
+}
+
+.contentleft {
   text-align: center;
 }
 
@@ -35,10 +39,10 @@ body, h1 {
   transition: all 1s ease-in-out;
 }
 
-.flex-grow-1 {
-  flex-grow: 1;
-}
+// .flex-grow-1 {
+//   flex-grow: 1;
+// }
 
-.flex-grow-0 {
-  flex-grow: 0;
-}
+// .flex-grow-0 {
+//   flex-grow: 0;
+// }
