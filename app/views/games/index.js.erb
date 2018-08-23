@@ -3,11 +3,10 @@ var availableGames = [];
 <% @games.each do |game| %>
 availableGames.push("<%= game.name %>")
 <% end %>
-
-console.log(availableGames);
-
 $("#test").autocomplete({
-  source: availableGames
+  source: availableGames,
+  messages: {
+        noResults: '',
+        results: function() {}
+    }
 })
-
-console.log("Working")
