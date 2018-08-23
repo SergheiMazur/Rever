@@ -21,6 +21,7 @@ class MeetupsController < ApplicationController
   # GET /meetups/new
   def new
     @meetup = Meetup.new
+    @platforms = Platform.all
   end
 
   # GET /meetups/1/edit

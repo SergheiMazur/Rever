@@ -21,17 +21,23 @@ body, h1 {
   flex-basis: 20%;
 }
 
-.content {
+.contentright {
+  text-align: center;
+}
+
+.contentleft {
   text-align: center;
 }
 
 #right {
   color: white;
+  background-color:blue;
   transition: all 1s ease-in-out;
 }
 
 #left {
   color: white;
+  background-color:gray;
   transition: all 1s ease-in-out;
 }
 
