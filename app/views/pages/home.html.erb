@@ -1,55 +1,104 @@
-<section class="xo-container">
-  <div class="xo-left">
-    <article>
-      <h1>Host</h1>
-      <!-- Button to trigger modal -->
-      <html>
-        <head>
-          <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-          <link rel="stylesheet" type="text/css" media="screen"
-           href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-        </head>
-        <body>
-          <div id="datetimepicker" class="input-append date">
-            <input type="text"></input>
-            <span class="add-on">
-              <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+<!-- Banner Start-->
+<div class="banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item item-1">
+                <div class="container">
+                    <!-- Banner Slider Inner 2 -->
+                    <div class="banner-slider-inner-2 text-right">
+                        <div class="row">
+                            <div class="col-lg-6 col-lg-offset-6 col-sm-6 col-sm-offset-6">
+                                <!-- Titel-->
+                                <h1><span>Welcome to</span> Rever!</h1>
+                                <!-- Paragraph -->
+                                <p>Your gaming neighboorhood_</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-2 active">
+                <div class="container">
+                    <!-- Banner Slider Inner 2 -->
+                    <div class="banner-slider-inner-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-lg-offset-6 col-sm-6 col-sm-offset-6">
+                                <!-- Titel-->
+                                <h1><span>Join a </span> Hangout!</h1>
+                                <!-- Paragraph -->
+                                <div class="search-bar">
+                                 <%= form_tag meetups_path, method: :get do %>
+                                  <%= text_field_tag :query,
+                                    params[:query],
+                                    class: "form-control",
+                                    placeholder: "What game do you want to play ?"
+                                  %>
+                                <% end %>
+                                </div>
+                                <!-- Btn -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="slider-mover-left" aria-hidden="true">
+                <img src="img/chevron-left.png" alt="chevron-left">
             </span>
-          </div>
-          <script type="text/javascript"
-           src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-          </script>
-          <script type="text/javascript"
-           src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
-          </script>
-          <script type="text/javascript"
-           src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
-          </script>
-          <script type="text/javascript"
-           src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
-          </script>
-          <script type="text/javascript">
-            $('#datetimepicker').datetimepicker({
-              format: 'dd/MM/yyyy hh:mm:ss',
-              language: 'pt-BR'
-            });
-          </script>
-        </body>
-      <html>
-  </div>
-  <div class="xo-right">
-    <article>
-      <h1>Play</h1>
-       <%= form_tag meetups_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a hangout near you"
-        %>
-      <% end %>
-    </article>
-  </div>
-</section>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="slider-mover-right" aria-hidden="true">
+                <img src="img/chevron-right.png" alt="chevron-right">
+            </span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<!-- Banner End-->
+
+<!-- Calendar -->
+<div class="container">
+    <div class="search-bar-vertical">
+        <div class="search-bar-vertical-inner">
+            <h2 class="visible-lg visible-md">Host a Hangout</h2>
+            <form>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="checkin">Day?</label>
+                        <input class="flatpickr" id="checkin" type="text" placeholder="Hangout Date">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Time</label>
+                        <input class="flatpickr" id="checkout" type="text" placeholder="Hangout Time">
+                    </div>
+                    <div class="form-group">
+                        <label for="room">Number of Guests?</label>
+                        <select class="form-control" id="room">
+                            <option>Choose Number of Guests</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>6</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button class="btn btn-danger">Almost there</button>
+                    </div>
+                </div>
+            </form>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--/ Calendar End -->
+
+
 
 
 
