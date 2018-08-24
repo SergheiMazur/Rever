@@ -3,7 +3,7 @@
 
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$headers-font: "razer";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +14,8 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: "razer";
+  src: asset-url("razer.ttf");
+}
