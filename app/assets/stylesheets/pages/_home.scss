@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.home {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  background-image: linear-gradient(45deg,rgba(80, 80, 80, 0.4), rgba(80, 80, 80, 0.6)), url(http://cdn.wegotthiscovered.com/wp-content/uploads/2017/08/3245626-xlarge.img_.jpg);
+  background-size: cover;
+}
+
+.home-left {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-right {
+  flex: 1 1 70%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.form-container {
+  width: 50%;
+}
+
+.title-container {
+  color:white;
+  margin-top: 80px;
+}
