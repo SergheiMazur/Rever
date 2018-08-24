@@ -97,18 +97,17 @@ body {
 }
 
 .banner .item-1 {
-    background: url(http://placehold.it/1349x900);
+    background: url(http://cdn.wegotthiscovered.com/wp-content/uploads/2017/08/3245626-xlarge.img_.jpg);
     background-size: cover;
+    -webkit-filter: opacity(.2);
+    filter: opacity(.3);
 }
 
 .banner .item-2 {
-    background: url(http://placehold.it/1349x900);
+    background: url(http://cdn2-www.mandatory.com/assets/uploads/2014/09/Forza2.jpg);
     background-size: cover;
-}
-
-.banner .item-3 {
-    background: url(http://placehold.it/1349x900);
-    background-size: cover;
+    -webkit-filter: opacity(.1);
+    filter: opacity(.3);
 }
 
 .carousel-control.left {
