@@ -1,32 +1,33 @@
-<div class="banner">
+<div class="banner" style="background-image: url(<%= asset_path("room1.png") %>)">
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h2>Name of the event</h2>
+      <h2 class="body-font">Name of the event</h2>
       <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-      <div>
+      <div class="event-detail">
         <%= image_tag("gamepad-solid.svg", class: "h-1", class: "h-1") %>
-        <span>Name of console</span>
+        <h4>Name of console</h4>
       </div>
-      <div>
+      <div class="event-detail">
         <%= image_tag("trophy-solid.svg", class: "h-1") %>
-        <span>Name of the game</span>
+        <h4>Name of the game</h4>
       </div>
-      <div>
+      <div class="event-detail">
         <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
-        <span>Dates of the meetup</span>
+        <h4>Dates of the meetup</h4>
       </div>
-      <div>
+      <div class="event-detail">
         <%= image_tag("clock-regular.svg", class: "h-1") %>
-        <span>Meetup direction</span>
+        <h4>Meetup direction</h4>
       </div>
     </div>
 
     <div class="col-md-6">
       <div>
-        <%= image_tag("") %>
+        <%= image_tag(current_user.imagelink, class:"img-circle") %>
+        <span>Alex, your host</span>
       </div>
     </div>
   </div>

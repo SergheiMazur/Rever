@@ -1,4 +1,18 @@
-.h-1 {
-  height: 1em;
+.h-2 {
+  height: 2em;
 }
-
+.event-detail {
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  justify-content: flex-start;
+  img {
+    width: 100px;
+    padding: 10px;
+  }
+  h4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
