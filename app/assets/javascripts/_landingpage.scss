@@ -1,0 +1,61 @@
+/*!
+ * Documenter 2.0
+ * http://rxa.li/documenter
+ *
+ * Copyright 2011, Xaver Birsak
+ * http://revaxarts.com
+//  *
+//  */
+// html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{
+//   margin:0;
+//   padding:0;
+//   border:0;
+//   outline:0;
+//   font-weight:inherit;
+//   font-style:inherit;
+//   font-size:100%;
+//   font-family:inherit;
+//   vertical-align:baseline;
+// }
+
+html {
+  font-size:101%;
+  font-family:Arial,verdana,arial,sans-serif;
+  font-size:12px;
+  -webkit-text-size-adjust:none;
+  color:#6F6F6F;
+  background-color:#efefef;
+}
+body{
+  min-height:100%;
+  height:auto;
+  width:100%;
+}
+footer, header, section {
+  display:block;
+}
+
+/** BANNER AREA START **/
+.banner {
+    position: relative;
+}
+
+.banner .item {
+    height: 900px;
+    text-align: center;
+}
+
+.banner .item-1 {
+    background: url(http://placehold.it/1349x900);
+    background-size: cover;
+}
+
+.banner .item-2 {
+    background: url(http://placehold.it/1349x900);
+    background-size: cover;
+}
+
+.banner .item-3 {
+    background: url(http://placehold.it/1349x900);
+    background-size: cover;
+}

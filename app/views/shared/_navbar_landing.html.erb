@@ -1,7 +1,7 @@
 <div class="navbar-wagon navbar-wagon-absolute">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "rever.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,7 +10,12 @@
     <% if user_signed_in? %>
 
       <!-- Avatar with dropdown menu -->
+      <div class="hostbutton">
+        <button type="button" class="btn btn-success">Become a Host!</button>
+      </div>
+
       <div class="navbar-wagon-item">
+
         <div class="dropdown">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
