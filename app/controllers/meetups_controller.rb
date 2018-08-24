@@ -34,9 +34,12 @@ class MeetupsController < ApplicationController
 
   # POST /meetups
   def create
+    @game = Game.find_by(name: params[:meetup][:game_name])
     @meetup = Meetup.new(meetup_params)
+    @platforms = Platform.all
     @meetup.user = current_user
-      if @meetup.save
+    @meetup.game = @game
+      if @meetup.save!
         redirect_to @meetup, notice: 'Meetup was successfully created.'
       else
         render :new
@@ -75,6 +78,6 @@ class MeetupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meetup_params
-      params.require(:meetup).permit(:title, :location, :start_time, :end_time, :game_id)
+      params.require(:meetup).permit(:title, :location, :start_time, :end_time)
     end
 end
