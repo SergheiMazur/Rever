@@ -10,9 +10,14 @@
     <% if user_signed_in? %>
 
       <!-- Avatar with dropdown menu -->
+       <div class="hostbutton">
+
+        <%= link_to "Become a Host!", new_meetup_path, class: "btn btn-success" %>
+      </div>
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag(asset_path(current_user.imagelink), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to profile_path do %>
@@ -29,21 +34,16 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <button class="btn btn-primary" href="users/sign_in" data-toggle="modal" data-target="#loginModal">Login</button>
-      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+      <button type="button" href="users/sign_in" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</button>
+
+       <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
          </div>
        </div>
      </div>
 
-     <button class="btn btn-primary" href="users/sign_up" data-toggle="modal" data-target="#signupModal">Sign Up</button>
-      <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-         </div>
-       </div>
-     </div>
     <% end %>
   </div>
 

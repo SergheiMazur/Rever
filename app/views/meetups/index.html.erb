@@ -3,44 +3,26 @@
   <p id="notice"><%= notice %></p>
 
   <h1>Meetups</h1>
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col" >Title</th>
-        <th scope="col" >Location</th>
-        <th scope="col" >Start time</th>
-        <th scope="col" >End time</th>
-        <th scope="col" >Game</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
+  <%= form_tag meetups_path, method: :get do %>
+    <%= text_field_tag :start_time %>
+    <%= text_field_tag :end_time %>
+    <%= submit_tag %>
+  <% end %>
+    <div class="row">
       <% @meetups.each do |meetup| %>
-        <tr scope="row">
-          <td><%= meetup.title %></td>
-          <td><%= meetup.location %></td>
-          <td><%= meetup.start_time %></td>
-          <td><%= meetup.end_time %></td>
-          <td><%= meetup.game.name %></td>
-          <td><%= link_to 'Show', meetup %></td>
-          <td><%= link_to 'Edit', edit_meetup_path(meetup) %></td>
-          <td><%= link_to 'Destroy', meetup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <div class="col-xs-3">
+          <%= render "shared/cards", meetup: meetup %>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-
+    </div>
   <br>
-  <button class="btn btn-primary" href="meetups/new" data-toggle="modal" data-target="#NewMeetupModal">New Meetup</button>
-      <div class="modal fade" id="NewMeetupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-         </div>
-       </div>
-     </div>
+  <a class="button btn btn-success" href="meetups/new" >New Meetup</a>
 
-  </div>
+
+</div>
+
+<div>
+
+</div>
 
 

@@ -4,12 +4,16 @@ class MeetupsController < ApplicationController
 
   # GET /meetups
   def index
-    @meetups = Meetup.all
-    if params[:query].present?
-      puts params[:query].class
-      @meetups = Meetup.search_by_meetup_title_and_game_name(params[:query])
-    else
+    if params[:start_time].nil?
       @meetups = Meetup.all
+      if params[:query].present?
+        puts params[:query].class
+        @meetups = Meetup.search_by_meetup_title_and_game_name(params[:query])
+      else
+        @meetups = Meetup.all
+      end
+    else
+     @meetups = Meetup.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
     end
   end
 
@@ -30,9 +34,12 @@ class MeetupsController < ApplicationController
 
   # POST /meetups
   def create
+    @game = Game.find_by(name: params[:meetup][:game_name])
     @meetup = Meetup.new(meetup_params)
+    @platforms = Platform.all
     @meetup.user = current_user
-      if @meetup.save
+    @meetup.game = @game
+      if @meetup.save!
         redirect_to @meetup, notice: 'Meetup was successfully created.'
       else
         render :new
@@ -71,6 +78,6 @@ class MeetupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meetup_params
-      params.require(:meetup).permit(:title, :location, :start_time, :end_time, :game_id)
+      params.require(:meetup).permit(:title, :location, :start_time, :end_time)
     end
 end

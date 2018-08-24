@@ -70,6 +70,7 @@
   <p>
   <strong>Guest:</strong>
     <% @guests.each do |guest| %>
+      <p>
       <%= guest.user.email %>
       <%= guest.current_status %>
       <%= link_to "accept", accept_guest_path(guest), class: "btn btn-primary" %>
@@ -83,6 +84,7 @@
     <% if guest.user == current_user && guest.meetup == @meetup %>
       <strong><%= guest.current_status %></strong>
     <% end %>
+    </p>
   <% end %>
 
   <%= link_to 'Edit', edit_meetup_path(@meetup) %> |
