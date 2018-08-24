@@ -20,9 +20,10 @@ games = ["007: Agent Under Fire", "Mario Kart 64", "Grand Theft Auto V", "Kingdo
 image_links = ["agent_under_fire.jpg", "gta_V.jpeg", "kingdom_hearts.jpg", "mario_kart_64.png", "sonic_the_hedgehog.png"]
 
 
-user_host = User.create!(email:"host@gmail.com", password:"qqqqqq")
-user_guest = User.create!(email:"guest@gmail.com", password:"qqqqqq")
-user2_guest = User.create!(email:"guest2@gmail.com", password:"qqqqqq")
+alex = User.create!(email:"alex@rever.com", password:"qqqqqq", imagelink: "alex.png")
+ali = User.create!(email:"ali@rever.com", password:"qqqqqq", imagelink: "ali.png")
+serghei = User.create!(email:"serghei@rever.com", password:"qqqqqq", imagelink: "serghei.png")
+elie = User.create!(email:"elie@rever.com", password:"qqqqqq", imagelink: "elie.png")
 
 
 platforms.each do |platform|
@@ -37,14 +38,13 @@ games.each_with_index do |game, index|
     )
 end
 
-meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "Montreal", lat:45.578041, lng:-73.5556777, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
-meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "Montreal", lat:45.543066, lng:-73.5722427, start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, user:user_host, game:Game.find(Game.first.id + 4))
-meetup3 = Meetup.create!(title: "this is game", location: "Montreal", lat:45.5026023, lng:-73.5660646, start_time: Time.now, end_time: Time.now + 1*60*60, user:user_host, game:Game.find(Game.first.id + 2))
-meetup4 = Meetup.create!(title: "this is game", location: "Montreal", lat:45.5026023, lng:-73.5660646, start_time: Time.now, end_time: Time.now + 1*60*60, user:user2_guest, game:Game.find(Game.first.id + 2))
+meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "Montreal", lat:45.578041, lng:-73.5556777, start_time: Time.now, end_time: Time.now + 1*60*60, user:alex, game:Game.find(Game.first.id + 1))
+meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "Montreal", lat:45.543066, lng:-73.5722427, start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, user:alex, game:Game.find(Game.first.id + 3))
+meetup3 = Meetup.create!(title: "Go play !!!", location: "Montreal", lat:45.5026023, lng:-73.5660646, start_time: Time.now, end_time: Time.now + 1*60*60, user:serghei, game:Game.find(Game.first.id + 2))
 
 
-Guest.create!(current_status:"Pending", user:user2_guest, meetup:meetup1)
-Guest.create!(current_status:"Pending", user:user_host, meetup:meetup4)
+Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)
+Guest.create!(current_status:"Pending", user:alex, meetup:meetup3)
 
 
 
