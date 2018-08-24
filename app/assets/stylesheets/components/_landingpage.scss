@@ -106,8 +106,8 @@ body {
 .banner .item-2 {
     background: url(http://cdn2-www.mandatory.com/assets/uploads/2014/09/Forza2.jpg);
     background-size: cover;
-    -webkit-filter: opacity(.1);
-    filter: opacity(.3);
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
 }
 
 .carousel-control.left {
