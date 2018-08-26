@@ -9,7 +9,7 @@
             <label for="search-box">
               <span class="fa fa-2x fa-search"></span>
             </label>
-              <input type="search" id="search-box" placeholder="What game do you want to play today_">
+              <input type="search" id="search-box" placeholder="What game do you want to play today?">
                 <%= form_tag meetups_path, method: :get do %>
                 <%= text_field_tag :query,
                 params[:query]%>
