@@ -1,0 +1,36 @@
+
+.searchform {
+  display: block;
+  margin: 0.2em;
+  overflow: hidden;
+  width: 50%;
+  color: #FFFFFF;
+}
+label, input {
+  vertical-align: baseline;
+  color: #FFFFFF;
+}
+label {
+  margin: 0.2em 0.2em 0 0;
+  float: right;
+
+}
+input[type="search"] {
+  border: 4px solid #FFFFFF;
+  border-width: 0 0 5px;
+  background-color: transparent;
+  padding: 0.125em 0.225em;
+  width: 75%;
+  float: left;
+  color: #FFFFFF;
+}
+
+input[type="placeholder"] {
+  color: #FFFFFF;
+}
+
+input[type="search"]:focus {
+  color: #01FF70;
+  border-color: #01FF70;
+  outline: none;
+}

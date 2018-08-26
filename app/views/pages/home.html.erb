@@ -1,29 +1,23 @@
 <!-- Banner Start-->
 <div class="home">
-
-  <div class="home-left">
     <div class="title-container">
     <h1>Welcome to Rever!</h1>
     <!-- Paragraph -->
     <p>Your gaming neighboorhood_</p>
+    <div class="search-container">
+          <form class="searchform group">
+            <label for="search-box">
+              <span class="fa fa-2x fa-search"></span>
+            </label>
+              <input type="search" id="search-box" placeholder="What game do you want to play today_">
+                <%= form_tag meetups_path, method: :get do %>
+                <%= text_field_tag :query,
+                params[:query]%>
+              <% end %>
+          </form>
     </div>
+   </div>
   </div>
-
-  <div class="home-right">
-    <div class="form-container">
-      <div class="form-group">
-        <div class="search-bar">
-          <%= form_tag meetups_path, method: :get do %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "What game do you feel like playing today?"%>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <div class="container-cards">
