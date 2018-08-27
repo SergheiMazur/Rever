@@ -32,7 +32,8 @@ class MeetupsController < ApplicationController
 
   # GET /meetups/1
   def show
-    @guests = Guest.where(meetup:@meetup)
+    @guests = Guest.where(meetup: @meetup)
+    @meetups = @meetup.user.meetups
   end
 
   # GET /meetups/new
