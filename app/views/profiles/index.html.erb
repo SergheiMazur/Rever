@@ -19,9 +19,6 @@
         <tr>
           <th scope="col" >Title</th>
           <th scope="col" >Game</th>
-          <th scope="col" >Start Time</th>
-          <th scope="col" >End Time</th>
-          <th scope="col" >Status</th>
           <th scope="col" >Antendees</th>
           <th colspan="3"></th>
         </tr>
@@ -31,17 +28,31 @@
       <tr>
         <td><%= link_to meetup.title, meetup_path(meetup) %></td>
         <td><%= meetup.game.name %></td>
-        <td><%= meetup.start_time %></td>
+           <td>
+          <ul class="list-inline">
+            <% meetup.guests.first(4).each do |guest|  %>
+              <li>
+                <%= link_to user_profile_path(guest.user) do  %>
+                  <%= image_tag guest.user.imagelink, class: "avatar" %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+          <td class="profilebutton">Edit Attendees</td>
+          <td class="profilebutton">Contact Buddies</td>
+
+<!--         <td><%= meetup.start_time %></td>
         <td><%= meetup.end_time %></td>
-        <td>#meetup status</td>
+        <td>#meetup status</td> -->
 
-        <td><img class="avatar" src="/assets/ali-f4b1318b5e8ac0319b57748e3fdd22ce0c5cb8ed2cd23b5dd8ea397352881cd3.png" aria-expanded="true"></td>
 
-        <% if @host %>
-          <td> <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %></td>
-        <% else %>
-          <td><%= meetup.guests.find_by(user:current_user).current_status %></td>
-        <% end %>
+        <!-- <% if @host %> -->
+          <!-- <td> <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %></td> -->
+        <!-- <% else %> -->
+          <!-- <td><%= meetup.guests.find_by(user:current_user).current_status %></td> -->
+        <!-- <% end %> -->
+
       </tr>
      <% end %>
   </tbody>
