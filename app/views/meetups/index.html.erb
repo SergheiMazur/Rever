@@ -4,10 +4,44 @@
 
   <h1>Hangout in your Area</h1>
   <%= form_tag meetups_path, method: :get do %>
-    <%= text_field_tag :start_time %>
-    <%= text_field_tag :end_time %>
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
     <%= submit_tag %>
   <% end %>
+  <div>
+    <p><center>You have <%= pluralize(@meetups.count, "hangout") %> in your area.</center</p>
+  </div>
     <div class="row">
       <% @meetups.each do |meetup| %>
         <div class="col-xs-3">
@@ -24,5 +58,3 @@
 <div>
 
 </div>
-
-
