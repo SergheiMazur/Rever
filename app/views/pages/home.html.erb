@@ -39,6 +39,16 @@
 <!--     <div class="form-group">
         <label>&nbsp;</label>
         <%#= link_to "Continue to Hangout Details",new_meetup_path %>
+  <div class="flex-center flex-grow-1" id="left">
+    <div class="contentright">
+      <h2>Play Now:</h2>
+      <%= form_tag meetups_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a hangout near you"
+        %>
+      <% end %>
     </div>
 </form>
   </div>

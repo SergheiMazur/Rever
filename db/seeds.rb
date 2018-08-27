@@ -17,7 +17,7 @@ User.destroy_all
 
 platforms = ["PlayStation 2", "Nintendo 64", "PlayStation 3", "PlayStation 4", "Sega Genesis"]
 games = ["007: Agent Under Fire", "Mario Kart 64", "Grand Theft Auto V", "Kingdom Hearts", "Sonic the HedgeHog"]
-image_links = ["agent_under_fire.jpg", "gta_V.jpeg", "kingdom_hearts.jpg", "mario_kart_64.png", "sonic_the_hedgehog.png"]
+image_links = ["agent_under_fire.jpg", "mario_kart_64.png", "gta_V.jpeg", "kingdom_hearts.jpg", "sonic_the_hedgehog.png"]
 
 
 alex = User.create!(email:"alex@rever.com", password:"qqqqqq", imagelink: "alex.png")
