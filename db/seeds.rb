@@ -20,10 +20,10 @@ games = ["007: Agent Under Fire", "Mario Kart 64", "Grand Theft Auto V", "Kingdo
 image_links = ["agent_under_fire.jpg", "mario_kart_64.png", "gta_V.jpeg", "kingdom_hearts.jpg", "sonic_the_hedgehog.png"]
 
 
-alex = User.create!(email:"alex@rever.com", password:"qqqqqq", imagelink: "alex.png")
-ali = User.create!(email:"ali@rever.com", password:"qqqqqq", imagelink: "ali.png")
-serghei = User.create!(email:"serghei@rever.com", password:"qqqqqq", imagelink: "serghei.png")
-elie = User.create!(email:"elie@rever.com", password:"qqqqqq", imagelink: "elie.png")
+alex = User.create!(email:"alex@rever.com", password:"qqqqqq", imagelink: "alex.png", fullname: "Alex-Oliver")
+ali = User.create!(email:"ali@rever.com", password:"qqqqqq", imagelink: "ali.png", fullname: "Ali")
+serghei = User.create!(email:"serghei@rever.com", password:"qqqqqq", imagelink: "serghei.png", fullname: "Serghei")
+elie = User.create!(email:"elie@rever.com", password:"qqqqqq", imagelink: "elie.png", fullname: "Elie")
 
 
 platforms.each do |platform|
@@ -38,9 +38,9 @@ games.each_with_index do |game, index|
     )
 end
 
-meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "Montreal", lat:45.578041, lng:-73.5556777, start_time: Time.now, end_time: Time.now + 1*60*60, user:alex, game:Game.find(Game.first.id + 1))
-meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "Montreal", lat:45.543066, lng:-73.5722427, start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, user:alex, game:Game.find(Game.first.id + 3))
-meetup3 = Meetup.create!(title: "Go play !!!", location: "Montreal", lat:45.5026023, lng:-73.5660646, start_time: Time.now, end_time: Time.now + 1*60*60, user:serghei, game:Game.find(Game.first.id + 2))
+meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, user:alex, game:Game.find(Game.first.id + 1))
+meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, user:alex, game:Game.find(Game.first.id + 3))
+meetup3 = Meetup.create!(title: "Go play !!!", location: "Coopérative d'habitation du Châtelet, 5308A Av du Parc, Montréal, QC H2V 4G7", start_time: Time.now, end_time: Time.now + 1*60*60, user:serghei, game:Game.find(Game.first.id + 2))
 
 
 Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)

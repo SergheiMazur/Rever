@@ -4,24 +4,57 @@ class MeetupsController < ApplicationController
 
   # GET /meetups
   def index
-    @meetups = Meetup.all
+    #@meetups = Meetup.all
 
-    if params[:query].present?
-      @meetups = @meetups.search_by_meetup_title_and_game_name(params[:query])
+    #if params[:query].present?
+      #@meetups = @meetups.search_by_meetup_title_and_game_name(params[:query])
+    #end
+
+    #if params[:start_date].present? && params[:end_date].present?
+      #@meetups = @meetups.where("start_date > ? AND end_date < ?", DateTime.parse(params[:start_date]), DateTime.parse(params[:end_date]))
+    #end
+
+    #if params[:start_time].present? && params[:end_time].present?
+      #@meetups = @meetups.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
+
+
+    # for gmaps
+
+    if params[:start_time].nil?
+      @meetups = Meetup.all
+      if params[:query].present?
+        puts params[:query].class
+        @meetups = Meetup.search_by_meetup_title_and_game_name(params[:query])
+      else
+        @meetups = Meetup.all
+      end
+
+
+    else
+     @meetups = Meetup.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
     end
 
-    if params[:start_date].present? && params[:end_date].present?
-      @meetups = @meetups.where("start_date > ? AND end_date < ?", DateTime.parse(params[:start_date]), DateTime.parse(params[:end_date]))
-    end
-
-    if params[:start_time].present? && params[:end_time].present?
-      @meetups = @meetups.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
+    @meetups_with_arddess = @meetups.where.not(latitude: nil, longitude: nil)
+    @markers = @meetups_with_arddess.map do |meetup|
+      {
+        lat: meetup.latitude,
+        lng: meetup.longitude#,
+      }
     end
   end
 
   # GET /meetups/1
   def show
+    @guests = Guest.where(meetup: @meetup)
+    @meetups = @meetup.user.meetups
+
     @guests = Guest.where(meetup:@meetup)
+    @markers = [
+      {
+        lat: @meetup.latitude,
+        lng: @meetup.longitude#,
+      }
+    ]
   end
 
   # GET /meetups/new

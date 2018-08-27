@@ -51,15 +51,26 @@
 </div>
     <%= submit_tag %>
   <% end %>
-  <div>
+
+   <div>
     <p><center>You have <%= pluralize(@meetups.count, "hangout") %> in your area.</center</p>
   </div>
-    <div class="row">
-      <% @meetups.each do |meetup| %>
-        <div class="col-xs-3">
+    <div class="row d-inline-block">
+      <div  style="width: 65%;">
+        <% @meetups.each do |meetup| %>
+        <div class="col-xs-4">
           <%= render "shared/cards", meetup: meetup %>
         </div>
       <% end %>
+      </div >
+        <div
+          id="map"
+          style="width: 35%;
+          height: 600px;
+          margin-top: 18px;
+          float: right;"
+          data-markers="<%= @markers.to_json %>"
+        ></div>
     </div>
   <br>
   <a class="button btn btn-success" href="meetups/new" >New Meetup</a>
