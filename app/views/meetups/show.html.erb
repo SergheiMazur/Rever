@@ -27,8 +27,8 @@
 
     <div class="col-md-6">
       <div style="margin-top: 50px;">
-        <%= image_tag(current_user.imagelink, class:"img-circle") %>
-        <span style="padding-left: 20px;"> <%= @meetup.user.fullname  %></span>
+        <%= image_tag(@meetup.user.imagelink, class:"img-circle") %>
+        <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
       </div>
     </div>
     <div  style="width: 65%;">
@@ -48,26 +48,14 @@
   </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div
+  id="map"
+  style="width: 50%;
+  height: 600px;
+  margin-top: 18px;
+  float: right;"
+  data-markers="<%= @markers.to_json %>"
+></div>
 
 <div class="bottom_nav">
   hggngnhgn

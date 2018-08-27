@@ -34,6 +34,14 @@ class MeetupsController < ApplicationController
   def show
     @guests = Guest.where(meetup: @meetup)
     @meetups = @meetup.user.meetups
+
+    @guests = Guest.where(meetup:@meetup)
+    @markers = [
+      {
+        lat: @meetup.latitude,
+        lng: @meetup.longitude#,
+      }
+    ]
   end
 
   # GET /meetups/new

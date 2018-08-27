@@ -8,6 +8,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  border-bottom: 2px solid rgb(70,70,70);
+  padding-bottom:8px;
 }
 
 .navbar-wagon-absolute{
@@ -26,7 +28,7 @@
 }
 
 /* User Avatar */
-.navbar-wagon .avatar {
+.avatar {
   height: 55px;
   width: 55px;
   border-radius: 50%;
