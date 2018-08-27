@@ -4,34 +4,24 @@ class MeetupsController < ApplicationController
 
   # GET /meetups
   def index
-    #@meetups = Meetup.all
 
-    #if params[:query].present?
-      #@meetups = @meetups.search_by_meetup_title_and_game_name(params[:query])
-    #end
+    # raise
+    @meetups = Meetup.all
 
-    #if params[:start_date].present? && params[:end_date].present?
-      #@meetups = @meetups.where("start_date > ? AND end_date < ?", DateTime.parse(params[:start_date]), DateTime.parse(params[:end_date]))
-    #end
+    if params[:query].present?
+      @meetups = @meetups.search_by_meetup_title_and_game_name(params[:query])
+    end
 
-    #if params[:start_time].present? && params[:end_time].present?
-      #@meetups = @meetups.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
+    if params[:platform_id].present?
+      @meetups = @meetups.joins(:game).where(games: { platform_id: params[:platform_id] })
+    end
 
+    if params[:start_date].present? && params[:end_date].present?
+      @meetups = @meetups.where("start_date > ? AND end_date < ?", Date.strptime(params[:start_date], "%m/%d/%Y"), Date.strptime(params[:end_date], "%m/%d/%Y"))
+    end
 
-    # for gmaps
-
-    if params[:start_time].nil?
-      @meetups = Meetup.all
-      if params[:query].present?
-        puts params[:query].class
-        @meetups = Meetup.search_by_meetup_title_and_game_name(params[:query])
-      else
-        @meetups = Meetup.all
-      end
-
-
-    else
-     @meetups = Meetup.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
+    if params[:start_time].present? && params[:end_time].present?
+      @meetups = @meetups.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
     end
 
     @meetups_with_arddess = @meetups.where.not(latitude: nil, longitude: nil)
