@@ -4,6 +4,8 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "bootstrap-datepicker": "^1.8.0",
+    "bootstrap-timepicker": "^0.5.2",
     "gmaps": "^0.4.24",
     "jquery": "^3.3.1",
     "material-datetime-picker": "^2.4.0"

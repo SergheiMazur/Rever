@@ -4,10 +4,54 @@
 
   <h1>Hangout in your Area</h1>
   <%= form_tag meetups_path, method: :get do %>
-    <%= text_field_tag :start_time %>
-    <%= text_field_tag :end_time %>
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input name="start_date" type='text' class="form-control" value="<%= params[:start_date] %>" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker2'>
+                    <input name="end_date" type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+      </div>
+
+        <div clas="row">
+          <div class="input-group bootstrap-timepicker timepicker col-sm-4 form-group">
+            <input name="start_time" id="timepicker1" type="text" value="" class="form-control input-small">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+          </div>
+
+           <div class="input-group bootstrap-timepicker timepicker col-sm-4 form-group">
+            <input name="end_time" id="timepicker2" type="text" value="" class="form-control input-small">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+           </div>
+        </div>
+
+        <select class="js-example-basic-single" name="platform_id">
+          <option value="">Platforms</option>
+          <% Platform.all.each do |platform| %>
+            <option value="<%= platform.id %>">
+              <%= platform.name %>
+            </option>
+          <% end %>
+          </select>
+    </div>
+</div>
     <%= submit_tag %>
   <% end %>
+
     <div class="row d-inline-block">
       <div  style="width: 65%;">
         <% @meetups.each do |meetup| %>
@@ -34,5 +78,4 @@
 <div>
 
 </div>
-
 
