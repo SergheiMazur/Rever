@@ -1,0 +1,34 @@
+
+.searchform {
+  display: block;
+  margin: 0.2em;
+  overflow: hidden;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.fa-search {
+  padding-left: 20px;
+  background-color: black;
+  border: none;
+}
+
+input[type="text"] {
+  border: 4px solid #FFFFFF;
+  border-width: 0 0 5px;
+  background-color: transparent;
+  padding: 0.125em 0.225em;
+  width: 75%;
+  float: left;
+  color: #FFFFFF;
+}
+
+input[type="placeholder"] {
+  color: #FFFFFF;
+}
+
+input[type="text"]:focus {
+  color: #01FF70;
+  border-color: #01FF70;
+  outline: none;
+}

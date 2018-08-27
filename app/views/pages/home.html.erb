@@ -1,26 +1,20 @@
 <!-- Banner Start-->
 <div class="home">
-
-  <div class="home-left">
-    <div class="title-container">
+  <div class="title-container">
     <h1>Welcome to Rever!</h1>
     <!-- Paragraph -->
     <p>Your gaming neighboorhood_</p>
-    </div>
-  </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div class="search-container">
+        <%= form_tag meetups_path, {method: :get, :class => 'comment_form'} do %>
+        <%= text_field_tag :query,
+            params[:query]%>
+            <a href=""></a>
 
-  <div class="home-right">
-    <div class="form-container">
-      <div class="form-group">
-        <div class="search-bar">
-          <%= form_tag meetups_path, method: :get do %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "What game do you feel like playing today?"%>
-          <% end %>
-        </div>
-      </div>
+            <%= button_tag "",:class => 'fa fa-2x fa-search' %>
+        <% end %>
     </div>
   </div>
 </div>
