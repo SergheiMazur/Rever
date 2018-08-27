@@ -20,10 +20,10 @@ games = ["007: Agent Under Fire", "Mario Kart 64", "Grand Theft Auto V", "Kingdo
 image_links = ["agent_under_fire.jpg", "mario_kart_64.png", "gta_V.jpeg", "kingdom_hearts.jpg", "sonic_the_hedgehog.png"]
 
 
-alex = User.create!(email:"alex@rever.com", password:"qqqqqq", imagelink: "alex.png")
-ali = User.create!(email:"ali@rever.com", password:"qqqqqq", imagelink: "ali.png")
-serghei = User.create!(email:"serghei@rever.com", password:"qqqqqq", imagelink: "serghei.png")
-elie = User.create!(email:"elie@rever.com", password:"qqqqqq", imagelink: "elie.png")
+alex = User.create!(email:"alex@rever.com", password:"qqqqqq", imagelink: "alex.png", fullname: "Alex-Oliver")
+ali = User.create!(email:"ali@rever.com", password:"qqqqqq", imagelink: "ali.png", fullname: "Ali")
+serghei = User.create!(email:"serghei@rever.com", password:"qqqqqq", imagelink: "serghei.png", fullname: "Serghei")
+elie = User.create!(email:"elie@rever.com", password:"qqqqqq", imagelink: "elie.png", fullname: "Elie")
 
 
 platforms.each do |platform|

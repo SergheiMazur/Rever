@@ -4,69 +4,95 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-md-6">
-      <h2 class="text-left body-font">Name of the event</h2>
+      <h2 class="text-left body-font"> <%= @meetup.title.capitalize %> </h2>
       <p class="text-left">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
-      <div class="event-detail">
-        <%= image_tag("gamepad-solid.svg", class: "h-1", class: "h-1") %>
-        <h4>Name of console</h4>
-      </div>
+
       <div class="event-detail">
         <%= image_tag("trophy-solid.svg", class: "h-1") %>
-        <h4>Name of the game</h4>
+        <h4><%= @meetup.game.name %></h4>
+      </div>
+      <div class="event-detail">
+        <%= image_tag("gamepad-solid.svg", class: "h-1", class: "h-1") %>
+        <h4><%= @meetup.game.platform.name%></h4>
       </div>
       <div class="event-detail">
         <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
-        <h4>Dates of the meetup</h4>
+        <h4><%= @meetup.start_time.strftime("%A, %b %d") %></h4>
       </div>
       <div class="event-detail">
         <%= image_tag("clock-regular.svg", class: "h-1") %>
-        <h4>Meetup direction</h4>
+        <h4><%= @meetup.start_time.strftime("%I:%M:%S %p") %> --- <%= @meetup.end_time.strftime("%I:%M:%S %p") %></h4>
       </div>
     </div>
 
     <div class="col-md-6">
       <div style="margin-top: 50px;">
         <%= image_tag(current_user.imagelink, class:"img-circle") %>
-        <span>Alex, your host</span>
+        <span style="padding-left: 20px;"> <%= @meetup.user.fullname  %></span>
       </div>
     </div>
   </div>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<div class="bottom_nav">
+  hggngnhgn
+</div>
 
-  <p>
+
+<!-- <div class="container">
+  <p id="notice"><%= notice %></p> -->
+
+  <!-- <p>
     <strong>Title:</strong>
     <%= @meetup.title %>
-  </p>
+  </p> -->
 
-  <p>
+<!--   <p>
     <strong>Location:</strong>
     <%= @meetup.location %>
-  </p>
-
+  </p> -->
+<!--
   <p>
     <strong>Start time:</strong>
     <%= @meetup.start_time %>
-  </p>
+  </p> -->
 
-  <p>
+  <!-- <p>
     <strong>End time:</strong>
     <%= @meetup.end_time %>
   </p>
-
-  <p>
+ -->
+  <!-- <p>
     <strong>Game:</strong>
     <%= @meetup.game.name %>
-  </p>
+  </p> -->
 
-  <p>
+  <!-- <p>
     <strong>User:</strong>
     <%= @meetup.user.email %>
-  </p>
-
+  </p> -->
+<!--
   <% if current_user == @meetup.user %>
   <p>
   <strong>Guest:</strong>
@@ -92,4 +118,4 @@
   <%= link_to 'Back', meetups_path %>
 </div>
 
-
+ -->
