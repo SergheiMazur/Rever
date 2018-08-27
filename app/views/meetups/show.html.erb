@@ -26,13 +26,21 @@
 
     <div class="col-md-6">
       <div style="margin-top: 50px;">
-        <%= image_tag(current_user.imagelink, class:"img-circle") %>
-        <span>Alex, your host</span>
+        <%= image_tag(@meetup.user.imagelink, class:"img-circle") %>
+        <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
       </div>
     </div>
   </div>
 </div>
 
+<div
+  id="map"
+  style="width: 50%;
+  height: 600px;
+  margin-top: 18px;
+  float: right;"
+  data-markers="<%= @markers.to_json %>"
+></div>
 
 <div class="container">
   <p id="notice"><%= notice %></p>
