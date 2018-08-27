@@ -25,14 +25,23 @@
   </div>
 </div>
 
-
-<div class="container-cards">
+<div class="container">
+  <div class="container-cards">
   <h2>Open Hangouts in Your Area_</h2>
-  <% @meetups.each do |meetup| %>
-    <div class="col-xs-3">
-      <%= render "shared/cards", meetup: meetup %>
-    </div>
-  <% end %>
+    <% @meetups.each do |meetup| %>
+      <div class="col-xs-3">
+        <%= render "shared/cards", meetup: meetup %>
+      </div>
+    <% end %>
+  </div>
+
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;
+    margin-top: 18px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
 </div>
 
 
