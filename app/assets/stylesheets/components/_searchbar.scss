@@ -6,16 +6,14 @@
   width: 50%;
   color: #FFFFFF;
 }
-label, input {
-  vertical-align: baseline;
-  color: #FFFFFF;
-}
-label {
-  margin: 0.2em 0.2em 0 0;
-  float: right;
 
+.fa-search {
+  padding-left: 20px;
+  background-color: black;
+  border: none;
 }
-input[type="search"] {
+
+input[type="text"] {
   border: 4px solid #FFFFFF;
   border-width: 0 0 5px;
   background-color: transparent;
@@ -29,7 +27,7 @@ input[type="placeholder"] {
   color: #FFFFFF;
 }
 
-input[type="search"]:focus {
+input[type="text"]:focus {
   color: #01FF70;
   border-color: #01FF70;
   outline: none;
