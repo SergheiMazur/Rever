@@ -4,14 +4,19 @@ class MeetupsController < ApplicationController
 
   # GET /meetups
   def index
+    # raise
     @meetups = Meetup.all
 
     if params[:query].present?
       @meetups = @meetups.search_by_meetup_title_and_game_name(params[:query])
     end
 
+    if params[:platform_id].present?
+      @meetups = @meetups.joins(:game).where(games: { platform_id: params[:platform_id] })
+    end
+
     if params[:start_date].present? && params[:end_date].present?
-      @meetups = @meetups.where("start_date > ? AND end_date < ?", DateTime.parse(params[:start_date]), DateTime.parse(params[:end_date]))
+      @meetups = @meetups.where("start_date > ? AND end_date < ?", Date.strptime(params[:start_date], "%m/%d/%Y"), Date.strptime(params[:end_date], "%m/%d/%Y"))
     end
 
     if params[:start_time].present? && params[:end_time].present?

@@ -6,5 +6,5 @@ import "bootstrap-timepicker";
 
 $('#datetimepicker1').datepicker();
 $('#datetimepicker2').datepicker();
-$('#timepicker1').timepicker('showWidget');
-$('#timepicker2').timepicker('showWidget');
+$('#timepicker1').timepicker({ defaultTime: false });
+$('#timepicker2').timepicker({ defaultTime: false });
