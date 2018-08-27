@@ -1,4 +1,4 @@
-# REVER v1
+# REVER v1 :bowtie:
 
 Your gaming neighboorhood_
 
