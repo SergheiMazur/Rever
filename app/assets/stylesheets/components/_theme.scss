@@ -1,3 +1,16 @@
-// body {
-//   background-color: white;
-// }
+body {
+  background-color: #222222;
+  color: #999999;
+}
+
+h1,h2,h3,h5 {
+  color: white;
+}
+h4 {
+  color: #999999;
+}
+
+.body-font {
+  font-family: $body-font;
+}
+
