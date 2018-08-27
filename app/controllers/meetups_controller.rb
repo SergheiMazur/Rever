@@ -4,6 +4,9 @@ class MeetupsController < ApplicationController
 
   # GET /meetups
   def index
+
+    # for gmaps
+
     if params[:start_time].nil?
       @meetups = Meetup.all
       if params[:query].present?
@@ -12,14 +15,31 @@ class MeetupsController < ApplicationController
       else
         @meetups = Meetup.all
       end
+
+
     else
      @meetups = Meetup.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
+    end
+
+    @meetups_with_arddess = @meetups.where.not(latitude: nil, longitude: nil)
+    @markers = @meetups_with_arddess.map do |meetup|
+      {
+        lat: meetup.latitude,
+        lng: meetup.longitude#,
+      }
     end
   end
 
   # GET /meetups/1
   def show
+
     @guests = Guest.where(meetup:@meetup)
+    @markers = [
+      {
+        lat: @meetup.latitude,
+        lng: @meetup.longitude#,
+      }
+    ]
   end
 
   # GET /meetups/new
