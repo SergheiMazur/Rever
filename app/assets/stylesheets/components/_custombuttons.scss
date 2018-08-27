@@ -1,0 +1,92 @@
+
+.buttoncustom {
+  background: #333;
+  color: #ccc;
+  width: 100px;
+  height: 50px;
+  border: 0;
+  font-size: 18px;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+  transition: .6s;
+  overflow: hidden;
+  &:focus{
+    outline: 0;
+  }
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,0.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    filter: blur(30px);
+    transform: translateX(-100px)  skewX(-15deg);
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:hover{
+    background: #338033;
+    cursor: pointer;
+    &:before{
+      transform: translateX(300px)  skewX(-15deg);
+      opacity: 0.6;
+      transition: .7s;
+    }
+    &:after{
+      transform: translateX(300px) skewX(-15deg);
+      opacity: 1;
+      transition: .7s;
+    }
+  }
+}
+
+.profilebutton {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid $red;
+  border-radius: 0.6em;
+  color: $red;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-color: $green;
+  color: #fff;
+  background: {
+  image: linear-gradient(45deg,$green 50%, transparent 50%);
+  position: 100%;
+  size: 200%;
+  }
+  transition: background 300ms ease-in-out;
+}
+
+.profilebutton:hover {
+  background-position: 0;
+  }
+
+
