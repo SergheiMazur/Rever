@@ -1,8 +1,8 @@
 <!-- Banner Start-->
 <div class="home">
-
   <div class="title-container">
     <div class="background-container">
+
     <video playsinline autoplay muted loop poster="bg.jpg" id="bgvid">
        <source src="vid.mp4" type="video/mp4">
     </video>
@@ -17,82 +17,40 @@
 
     <p></p>
     <!-- Paragraph -->
-<div class="body-container">
-    <p class="line-1 anim-typewriter">What game do you want to play today?</p>
-</div>
-  <div class="search-container">
-      <%= form_tag meetups_path, {method: :get, :class => 'comment_form'} do %>
-      <%= text_field_tag :query,
-        params[:query]%>
-        <a href=""></a>
-      <%= button_tag "",:class => 'fa fa-2x fa-search', placeholder: "Search for a game" %>
-      <% end %>
+    <div class="body-container">
+        <p class="line-1 anim-typewriter">What game do you want to play today?</p>
+    </div>
+
+      <div class="search-container">
+          <%= form_tag meetups_path, {method: :get, :class => 'comment_form'} do %>
+          <%= text_field_tag :query,
+            params[:query]%>
+            <a href=""></a>
+          <%= button_tag "",:class => 'fa fa-2x fa-search', placeholder: "Search for a game" %>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-</div>
 
-<div class="container-bottom">
-  <p class="container-cards">Browse Hangouts in Your Area</p>
+
+<div class="container" >
+  <div class="container-bottom">
+    <p class="container-cards">Browse Hangouts in Your Area</p>
     <% @meetups.each do |meetup| %>
       <div class="col-xs-3">
         <%= render "shared/cards", meetup: meetup %>
       </div>
     <% end %>
-
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;
-    margin-top: 18px;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
-</div>
-</div>
-
-<!--     <div class="form-group">
-        <label>&nbsp;</label>
-        <%#= link_to "Continue to Hangout Details",new_meetup_path %>
-  <div class="flex-center flex-grow-1" id="left">
-    <div class="contentright">
-      <h2>Play Now:</h2>
-      <%= form_tag meetups_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a hangout near you"
-        %>
-      <% end %>
-    </div>
-</form>
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;
+      margin-top: 18px;"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
   </div>
 </div>
-</div> -->
-
-
-       <!--  <label for="checkin">Day?</label>
-        <input class="flatpickr" id="checkin" type="text" placeholder="Hangout Date">
-    </div>
-
-    <div class="form-group">
-        <label for="checkout">Time</label>
-        <input class="flatpickr" id="checkout" type="text" placeholder="Hangout Time">
-    </div>
-
-    <div class="form-group">
-        <label for="room">Number of Guests?</label>
-        <select class="form-control" id="room">
-            <option>Choose Number of Guests</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>6</option>
-        </select>
-    </div> -->
-
-
-
 
 
 

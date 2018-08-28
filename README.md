@@ -1,1 +1,12 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# REVER v1 :bowtie:
+
+Your gaming neighboorhood_
+
+### Target:
+Financially constrained and confused gamer.
+
+### Pain:
+The price and quantity of games too high. Unsure of what game to buy/play, thus we have a confused gamer.
+
+### Solution:
+Help the gamer make an informed decision by giving them a game recommendation based on their preference.

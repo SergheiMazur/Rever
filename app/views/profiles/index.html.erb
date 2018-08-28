@@ -3,7 +3,6 @@
   <p> <%= current_user.email.split("@")[0].capitalize %> </p>
   <p> <%= current_user.email %> </p>
 
-
 <div class="profilecards-container">
   <div class="row">
   <div class="col-md-6">
@@ -13,6 +12,7 @@
       <h1><%= meetup.start_date.strftime("%m") %></h1>
       <hr>
       <h2><%= meetup.start_date.strftime("%b") %></h2>
+
     </div>
     <div class="right-card-flex">
       <p><%= meetup.title %></p>
