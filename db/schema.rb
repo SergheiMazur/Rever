@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-
-ActiveRecord::Schema.define(version: 2018_08_27_153046) do
-=======
 ActiveRecord::Schema.define(version: 2018_08_27_203730) do
->>>>>>> 9716bfccd4ebfca60689cdac84c44d658d2d36f5
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +38,10 @@ ActiveRecord::Schema.define(version: 2018_08_27_203730) do
   create_table "meetups", force: :cascade do |t|
     t.string "title"
     t.string "location"
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.float "latitude"
     t.float "longitude"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.bigint "game_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
