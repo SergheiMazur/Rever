@@ -1,74 +1,43 @@
 <h2 class="profile-header"> Your Profile </h2>
+  <p> #placeholder for picture</p>
   <p> <%= current_user.email.split("@")[0].capitalize %> </p>
   <p> <%= current_user.email %> </p>
 
 
-<div class="container-fluid">
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Hosting</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Attending</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-      <div class="table100 ver4 m-b-110">
-        <div class="table100-head">
-        <table class="table table-dark">
-        <thead>
-        <tr class="table-borders">
-          <th scope="col" >Title</th>
-          <th scope="col" >Game</th>
-          <th scope="col" >Antendees</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-  <tbody>
-    <% @meetups.each do |meetup| %>
-      <tr class="table-borders">
-        <td><%= link_to meetup.title, meetup_path(meetup) %></td>
-        <td><%= meetup.game.name %></td>
-           <td>
-          <ul class="list-inline">
-            <% meetup.guests.first(4).each do |guest|  %>
-              <li>
-                <%= link_to user_profile_path(guest.user) do  %>
-                  <%= image_tag guest.user.imagelink, class: "avatar" %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </td>
-          <td></td>
-          <td class="btn btn-primary custom-btn">Edit Attendees</td>
-          <td class="btn btn-primary custom-btn">Contact Buddies</td>
-
-<!--         <td><%= meetup.start_time %></td>
-        <td><%= meetup.end_time %></td>
-        <td>#meetup status</td> -->
-
-
-        <!-- <% if @host %> -->
-          <!-- <td> <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %></td> -->
-        <!-- <% else %> -->
-          <!-- <td><%= meetup.guests.find_by(user:current_user).current_status %></td> -->
-        <!-- <% end %> -->
-
-      </tr>
-     <% end %>
-  </tbody>
-</table>
+<div class="profilecards-container">
+  <div class="row">
+  <div class="col-md-6">
+  <% @meetups.each do |meetup| %>
+  <div class="top-flex">
+    <div class="left-card-flex">
+      <h1><%= meetup.start_date.strftime("%m") %></h1>
+      <hr>
+      <h2><%= meetup.start_date.strftime("%b") %></h2>
     </div>
-
-    <div role="tabpanel" class="tab-pane" id="profile">
-
+    <div class="right-card-flex">
+      <p><%= meetup.title %></p>
+      <p><%= meetup.location %></p>
+      <p><%= meetup.start_time %></p>
     </div>
   </div>
-
+  <div class="middle-box">
+    <span>Guests: <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %> </span><span>Your Request: <%=  %></span>
+  </div>
+  <div class="bottom-box">
+    <h2>hosted by <%= meetup.user.email.split("@")[0].capitalize %></h2>
+  </div>
+ <% end %>
 </div>
-
-
-
+</div>
+</div>
+<!--
+<ul class="list-inline">
+            <#% meetup.guests.first(4).each do |guest|  %>
+              <li>
+                <%#= link_to user_profile_path(guest.user) do  %>
+                  <%#= image_tag guest.user.imagelink, class: "avatar" %>
+                <#% end %>
+              </li>
+            <#% end %>
+          </ul> -->
 
