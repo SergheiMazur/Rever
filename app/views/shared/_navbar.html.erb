@@ -1,8 +1,14 @@
 <div class="navbar-wagon navbar-wagon-relative">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "rever.png", height: 50 %>
-  <% end %>
+  <div class="row-fluid">
+    <%= link_to root_path, class: "navbar-wagon-brand col-sm-6" do %>
+      <%= image_tag "rever.png", height: 50 %>
+    <% end %>
+    <div class="navbar-wagon-brand col-sm-6 search_bar_wagon">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+  </div>
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
