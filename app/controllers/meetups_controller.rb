@@ -4,6 +4,7 @@ class MeetupsController < ApplicationController
 
   # GET /meetups
   def index
+
     # raise
     @meetups = Meetup.all
 
@@ -34,6 +35,8 @@ class MeetupsController < ApplicationController
 
   # GET /meetups/1
   def show
+    @guests = Guest.where(meetup: @meetup)
+    @meetups = @meetup.user.meetups
 
     @guests = Guest.where(meetup:@meetup)
     @markers = [
