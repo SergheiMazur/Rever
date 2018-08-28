@@ -1,3 +1,20 @@
+<!-- Bootstrap modal new meetup session -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">New Hang Out</h4>
+      </div>
+
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="navbar-wagon navbar-wagon-relative">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -9,10 +26,9 @@
 
     <% if user_signed_in? %>
 
-      <!-- Avatar with dropdown menu -->
-       <div class="hostbutton">
-
-        <%= link_to "Become a Host!", new_meetup_path, class: "btn btn-primary custom-btn" %>
+      <!-- Button trigger modal -->
+      <div  class="btn btn-primary custom-btn" data-toggle="modal" data-target="#myModal">
+        Become a Host!
 
       </div>
 

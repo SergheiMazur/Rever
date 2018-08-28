@@ -1,9 +1,9 @@
-<div class="container">
+
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-post">
         <h1>Start a Hangout!</h1>
-        <%= simple_form_for(@meetup) do |f| %>
+        <%= simple_form_for Meetup.new do |f| %>
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
@@ -20,4 +20,3 @@
       </div>
     </div>
   </div>
-</div>

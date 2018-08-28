@@ -17,7 +17,7 @@ class MeetupsController < ApplicationController
     end
 
     if params[:start_date].present? && params[:end_date].present?
-      @meetups = @meetups.where("start_date > ? AND end_date < ?", Date.strptime(params[:start_date], "%m/%d/%Y"), Date.strptime(params[:end_date], "%m/%d/%Y"))
+      @meetups = @meetups.where("date > ? AND date < ?", Date.strptime(params[:start_date], "%m/%d/%Y"), Date.strptime(params[:end_date], "%m/%d/%Y"))
     end
 
     if params[:start_time].present? && params[:end_time].present?
