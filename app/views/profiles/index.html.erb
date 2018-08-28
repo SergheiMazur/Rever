@@ -1,4 +1,6 @@
-<h2>Hey <%= current_user.email.split("@")[0].capitalize %> !</h1>
+<h2 class="profile-header"> Your Profile </h2>
+  <p> <%= current_user.email.split("@")[0].capitalize %> </p>
+  <p> <%= current_user.email %> </p>
 
 
 <div class="container-fluid">
@@ -14,7 +16,7 @@
     <div role="tabpanel" class="tab-pane active" id="home">
       <div class="table100 ver4 m-b-110">
         <div class="table100-head">
-        <table class="table table-striped">
+        <table class="table table-dark">
         <thead>
         <tr>
           <th scope="col" >Title</th>
@@ -39,8 +41,9 @@
             <% end %>
           </ul>
         </td>
-          <td class="profilebutton">Edit Attendees</td>
-          <td class="profilebutton">Contact Buddies</td>
+          <td></td>
+          <td class="btn btn-primary custom-btn">Edit Attendees</td>
+          <td class="btn btn-primary custom-btn">Contact Buddies</td>
 
 <!--         <td><%= meetup.start_time %></td>
         <td><%= meetup.end_time %></td>

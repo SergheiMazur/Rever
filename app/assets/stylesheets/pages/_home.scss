@@ -31,7 +31,7 @@
 }
 
 .header-font {
-  font-family: titillium;
+  font-family: earthquake;
   display: flex;
   align-items: center;
   font-size: 75px;
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   margin-top: 200px;
-  padding-top: 500px;
+  padding-top: 200px;
   color: #01FF70;
 }
 
@@ -70,7 +70,7 @@
 
 /* Animation */
 .anim-typewriter {
-  animation: typewriter 2s steps(44) 2s 1 normal both,
+  animation: typewriter 1s steps(44) 2s 1 normal both,
              blinkTextCursor 500ms steps(44) infinite normal;
 }
 @keyframes typewriter{
@@ -96,4 +96,8 @@ video#bgvid {
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+}
+
+.profile-header {
+ font-family: titillium;
 }
