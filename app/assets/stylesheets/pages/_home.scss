@@ -3,33 +3,165 @@
   width: 100%;
   height: 90vh;
   display: flex;
-  background-image: linear-gradient(45deg,rgba(80, 80, 80, 0.4), rgba(80, 80, 80, 0.6)), url(http://cdn.wegotthiscovered.com/wp-content/uploads/2017/08/3245626-xlarge.img_.jpg);
+  // background-image: linear-gradient(45deg,rgba(80, 80, 80, 0.8), rgba(80, 80, 80, 0.9)), url(http://cdn.wegotthiscovered.com/wp-content/uploads/2017/08/3245626-xlarge.img_.jpg);
   background-size: cover;
-}
-
-.home-left {
-  flex: 1 1 40%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.home-right {
-  flex: 1 1 70%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
-.form-container {
-  width: 50%;
+  background-color: black;
 }
 
 .title-container {
-  color:white;
+  flex: 1 1 70%;
   margin-top: 80px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: space mono;
+  font-size: 40px;
 }
 
-.container-cards {
-  font: white;
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 90px;
 }
+
+.container-bottom {
+  background-color: white;
+}
+.container-cards {
+  font-color: #000000;
+  font-family: titillium;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.header-font {
+  font-family: titillium;
+  display: flex;
+  align-items: center;
+  font-size: 75px;
+  font-weight: bold;
+}
+
+.background-container {
+  background-image: url(https://i.gifer.com/IrS.gif);
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+}
+
+// html{
+//   min-height: 100%;
+//   overflow: hidden;
+// }
+.body-container {
+  display: flex;
+  align-items: center;
+  color: #01FF70;
+}
+
+.line-1 {
+  color: #01FF70;
+  margin-top: 190px;
+  font-family: razer;
+  position: relative;
+  top: 50%;
+  width: 14em;
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-size: 20px;
+  // font-family: 'Anonymous Pro', monospace;
+  background-color: rgb(0,0,0);
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 1s steps(44) 2s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.profile-header {
+ font-family: titillium;
+}
+
+//going on a limb
+
+em {
+  font-family: 'Josefin Sans', sans-serif;
+  color: currentColor;
+  font-size: 15vmin;
+  position: relative;
+  font-style: normal;
+  width: 20vmin;
+  text-align: center;
+}
+
+em.planet {
+  -webkit-animation: planet-rotate 4s linear infinite;
+  animation: planet-rotate 4s linear infinite;
+  position: relative;
+}
+
+em.planet::before {
+  content: "";
+  position: absolute;
+  top: -.5vmin;
+  left: 3.5vmin;
+  z-index: -1;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 50%;
+  background: black;
+}
+
+em.planet.left {
+  -webkit-transform-origin: 40vmin 5vmin;
+  transform-origin: 40vmin 5vmin;
+}
+
+em.planet.right {
+  -webkit-transform-origin: -20vmin 5vmin;
+  transform-origin: -20vmin 5vmin;
+}
+
+@-webkit-keyframes planet-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes planet-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+

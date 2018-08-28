@@ -3,11 +3,17 @@
   background: transparent;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  border-bottom: 2px solid rgb(70,70,70);
+  padding-bottom:8px;
+}
+
+.search_bar_wagon {
+  padding-top: 10px;
 }
 
 .navbar-wagon-absolute{
@@ -84,4 +90,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.form-control-label {
+  color: #00FF00;
 }
