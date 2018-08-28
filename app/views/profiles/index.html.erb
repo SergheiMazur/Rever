@@ -18,7 +18,7 @@
         <div class="table100-head">
         <table class="table table-dark">
         <thead>
-        <tr>
+        <tr class="table-borders">
           <th scope="col" >Title</th>
           <th scope="col" >Game</th>
           <th scope="col" >Antendees</th>
@@ -27,7 +27,7 @@
       </thead>
   <tbody>
     <% @meetups.each do |meetup| %>
-      <tr>
+      <tr class="table-borders">
         <td><%= link_to meetup.title, meetup_path(meetup) %></td>
         <td><%= meetup.game.name %></td>
            <td>
