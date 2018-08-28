@@ -46,10 +46,16 @@
 }
 
 .background-container {
-  background-image: url(https://media.giphy.com/media/d97OPMEimWGBi/giphy.gif);
+  // background-image: url(https://media.giphy.com/media/d97OPMEimWGBi/giphy.gif);
   background-size: cover;
   width: 100%;
   text-align: center;
+  font-family: 'Roboto Mono';
+  color: white;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
 }
 
 // html{

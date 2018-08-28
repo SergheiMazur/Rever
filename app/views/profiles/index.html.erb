@@ -1,34 +1,36 @@
 <h2 class="profile-header"> Your Profile </h2>
-  <p> #placeholder for picture</p>
-  <p> <%= current_user.email.split("@")[0].capitalize %> </p>
-  <p> <%= current_user.email %> </p>
+  <span> <%= current_user.email.split("@")[0].capitalize %> </span><span <%= current_user.email %>></span>
 
 <div class="profilecards-container">
   <div class="row">
-  <div class="col-md-6">
-  <% @meetups.each do |meetup| %>
-  <div class="top-flex">
-    <div class="left-card-flex">
-      <h1><%= meetup.start_date.strftime("%m") %></h1>
-      <hr>
-      <h2><%= meetup.start_date.strftime("%b") %></h2>
+    <% @meetups.each do |meetup| %>
+      <div class="col-md-4">
+        <div class="meetup-card">
 
-    </div>
-    <div class="right-card-flex">
-      <p><%= meetup.title %></p>
-      <p><%= meetup.location %></p>
-      <p><%= meetup.start_time %></p>
-    </div>
+          <div class="top-flex">
+            <div class="left-card-flex">
+              <h1><%= meetup.date.strftime("%m") %></h1>
+              <h2><%= meetup.date.strftime("%b") %></h2>
+            </div>
+            <div class="right-card-flex">
+              <p><%= meetup.title %></p>
+              <p><%= meetup.location %></p>
+              <p><%= meetup.start_time %></p>
+            </div>
+          </div>
+
+          <div class="middle-box">
+            <span>Guests: <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %> </span><span>Your Request: <%=  %></span>
+          </div>
+
+          <div class="bottom-box">
+            <h2>hosted by <%= meetup.user.email.split("@")[0].capitalize %></h2>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="middle-box">
-    <span>Guests: <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %> </span><span>Your Request: <%=  %></span>
-  </div>
-  <div class="bottom-box">
-    <h2>hosted by <%= meetup.user.email.split("@")[0].capitalize %></h2>
-  </div>
- <% end %>
-</div>
-</div>
 </div>
 <!--
 <ul class="list-inline">

@@ -1,7 +1,7 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500|Roboto+Mono:400,100,300,700,500");
 
-// Define fonts for body and headers
+// // Define fonts for body and headers
 $body-font: "Titillium";
 $headers-font: "razer";
 
@@ -15,12 +15,13 @@ $headers-font: "razer";
 // }
 // $my-font: "Font Name";
 
-@font-face {
-  font-family: "razer";
-  src: asset-url("razer.ttf");
+//  @font-face {
+//    font-family: "razer";
+//    src: asset-url("razer.ttf");
+// }
+
+ @font-face {
+   font-family: "Titillium";
+   src: asset-url("TitilliumWeb-Regular.ttf");
 }
 
-@font-face {
-  font-family: "Titillium";
-  src: asset-url("TitilliumWeb-Regular.ttf");
-}
