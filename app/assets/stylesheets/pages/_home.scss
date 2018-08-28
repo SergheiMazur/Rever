@@ -10,21 +10,158 @@
 
 .title-container {
   flex: 1 1 70%;
-  color:white;
   margin-top: 80px;
   align-items: center;
   display: flex;
   flex-direction: column;
+  font-family: space mono;
+  font-size: 40px;
 }
 
 .search-container {
-  flex: 1 1 30%;
   display: flex;
-  justify-content: right;
   align-items: center;
   flex-direction: column;
+  margin-top: 90px;
 }
 
-.container-cards {
-  font: white;
+.container-bottom {
+  background-color: white;
 }
+.container-cards {
+  font-color: #000000;
+  font-family: titillium;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.header-font {
+  font-family: titillium;
+  display: flex;
+  align-items: center;
+  font-size: 75px;
+  font-weight: bold;
+}
+
+.background-container {
+  background-image: url(https://i.gifer.com/IrS.gif);
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+}
+
+// html{
+//   min-height: 100%;
+//   overflow: hidden;
+// }
+.body-container {
+  display: flex;
+  align-items: center;
+  color: #01FF70;
+}
+
+.line-1 {
+  color: #01FF70;
+  margin-top: 190px;
+  font-family: razer;
+  position: relative;
+  top: 50%;
+  width: 14em;
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-size: 20px;
+  // font-family: 'Anonymous Pro', monospace;
+  background-color: rgb(0,0,0);
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 1s steps(44) 2s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.profile-header {
+ font-family: titillium;
+}
+
+//going on a limb
+
+em {
+  font-family: 'Josefin Sans', sans-serif;
+  color: currentColor;
+  font-size: 15vmin;
+  position: relative;
+  font-style: normal;
+  width: 20vmin;
+  text-align: center;
+}
+
+em.planet {
+  -webkit-animation: planet-rotate 4s linear infinite;
+  animation: planet-rotate 4s linear infinite;
+  position: relative;
+}
+
+em.planet::before {
+  content: "";
+  position: absolute;
+  top: -.5vmin;
+  left: 3.5vmin;
+  z-index: -1;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 50%;
+  background: black;
+}
+
+em.planet.left {
+  -webkit-transform-origin: 40vmin 5vmin;
+  transform-origin: 40vmin 5vmin;
+}
+
+em.planet.right {
+  -webkit-transform-origin: -20vmin 5vmin;
+  transform-origin: -20vmin 5vmin;
+}
+
+@-webkit-keyframes planet-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes planet-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+

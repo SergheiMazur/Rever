@@ -1,33 +1,42 @@
 <!-- Banner Start-->
 <div class="home">
   <div class="title-container">
-    <h1>Welcome to Rever!</h1>
-    <!-- Paragraph -->
-    <p>Your gaming neighboorhood_</p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <div class="search-container">
-        <%= form_tag meetups_path, {method: :get, :class => 'comment_form'} do %>
-        <%= text_field_tag :query,
-            params[:query]%>
-            <a href=""></a>
-
-            <%= button_tag "",:class => 'fa fa-2x fa-search' %>
-        <% end %>
+    <div class="background-container">
+    <video playsinline autoplay muted loop poster="bg.jpg" id="bgvid">
+       <source src="vid.mp4" type="video/mp4">
+    </video>
+    <h1 class="header-font">Welcome to</h1>
+    <h1>
+      <em>R</em>
+      <em class="planet left">E</em>
+      <em>V</em>
+      <em class="planet right">E</em>
+      <em>R</em>
+    </h1>
     </div>
+    <p></p>
+    <!-- Paragraph -->
+<div class="body-container">
+    <p class="line-1 anim-typewriter">What game do you want to play today?</p>
+</div>
+  <div class="search-container">
+      <%= form_tag meetups_path, {method: :get, :class => 'comment_form'} do %>
+      <%= text_field_tag :query,
+        params[:query]%>
+        <a href=""></a>
+      <%= button_tag "",:class => 'fa fa-2x fa-search', placeholder: "Search for a game" %>
+      <% end %>
   </div>
 </div>
+</div>
 
-<div class="container">
-  <div class="container-cards">
-  <h2>Open Hangouts in Your Area_</h2>
+<div class="container-bottom">
+  <p class="container-cards">Browse Hangouts in Your Area</p>
     <% @meetups.each do |meetup| %>
       <div class="col-xs-3">
         <%= render "shared/cards", meetup: meetup %>
       </div>
     <% end %>
-  </div>
 
   <div
     id="map"
@@ -37,7 +46,7 @@
     data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
-
+</div>
 
 <!--     <div class="form-group">
         <label>&nbsp;</label>
