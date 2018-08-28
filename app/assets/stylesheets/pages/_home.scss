@@ -38,23 +38,27 @@
 }
 
 .header-font {
-  font-family: earthquake;
+  font-family: titillium;
   display: flex;
   align-items: center;
   font-size: 75px;
   font-weight: bold;
 }
 
+.background-container {
+  background-image: url(https://i.gifer.com/IrS.gif);
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+}
 
 // html{
 //   min-height: 100%;
 //   overflow: hidden;
 // }
-.body-font {
+.body-container {
   display: flex;
   align-items: center;
-  margin-top: 200px;
-  padding-top: 200px;
   color: #01FF70;
 }
 
@@ -108,3 +112,56 @@ video#bgvid {
 .profile-header {
  font-family: titillium;
 }
+
+//going on a limb
+
+em {
+  font-family: 'Josefin Sans', sans-serif;
+  color: currentColor;
+  font-size: 15vmin;
+  position: relative;
+  font-style: normal;
+  width: 20vmin;
+  text-align: center;
+}
+
+em.planet {
+  -webkit-animation: planet-rotate 4s linear infinite;
+  animation: planet-rotate 4s linear infinite;
+  position: relative;
+}
+
+em.planet::before {
+  content: "";
+  position: absolute;
+  top: -.5vmin;
+  left: 3.5vmin;
+  z-index: -1;
+  width: 13vmin;
+  height: 13vmin;
+  border-radius: 50%;
+  background: black;
+}
+
+em.planet.left {
+  -webkit-transform-origin: 40vmin 5vmin;
+  transform-origin: 40vmin 5vmin;
+}
+
+em.planet.right {
+  -webkit-transform-origin: -20vmin 5vmin;
+  transform-origin: -20vmin 5vmin;
+}
+
+@-webkit-keyframes planet-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
+}
+
+@keyframes planet-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
