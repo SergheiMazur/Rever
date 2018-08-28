@@ -7,10 +7,10 @@ h1,h2,h3,h5 {
   color: white;
 }
 h4 {
-  color: $green;
+  color: #00FF00;
 }
 
-p {
+p2 {
   color: #999999;
 }
 
@@ -18,3 +18,23 @@ p {
   font-family: $body-font;
 }
 
+.title a {
+  color: #00FF00;
+}
+
+.title h1 {
+  color: #00FF00;
+}
+
+p {
+  color: white;
+  font-size: 40px;
+}
+
+.space {
+  margin: 1em;
+}
+
+td {
+  color: #00FF00;
+}
