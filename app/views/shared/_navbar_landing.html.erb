@@ -1,8 +1,10 @@
 <div class="navbar-wagon navbar-wagon-absolute">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "rever.png", height: 50 %>
-  <% end %>
+  <div class="row-fluid">
+    <%= link_to root_path, class: "navbar-wagon-brand col-sm-6" do %>
+      <%= image_tag "rever.png", height: 50 %>
+    <% end %>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -56,7 +58,7 @@
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: black; border: 1px solid white;">
       <div class="modal-body">
         <div class="formsformat">
         <h2>Login</h2>

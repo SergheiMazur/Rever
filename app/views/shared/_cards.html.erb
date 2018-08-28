@@ -1,14 +1,17 @@
-
-<div class="example-2 card" style="background: url(<%= asset_url( meetup.game.image_link ) %>) center / cover no-repeat; border-radius: 4px;">
-  <div class="wrapper">
-    <div class="data">
-      <div class="content">
-        <h1 class="title"><a> <center> <%= meetup.title %> </center></p>
-          <%= link_to "Read More", meetup_path(meetup), class: "button" %>
+<div class="container con_margin">
+  <%= link_to meetup_path(meetup) do %>
+    <div class="example-2 card" style="background: url(<%= asset_url( meetup.game.image_link ) %>) center / cover no-repeat; border-radius: 4px; width: 256px;">
+      <div class="wrapper">
+        <div class="data">
+          <div class="content">
+            <!-- <h1 class="title"><a> <center> <%= meetup.title %> </center></p> -->
+              <div class="title">
+                <h1 class="button"> <%= meetup.title %> </h1>
+                <h1 class="button"> Read More </h1>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
-
-
-
