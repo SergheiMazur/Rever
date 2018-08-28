@@ -33,16 +33,17 @@
     </div>
 
     <div class="flex-container-right">
+      <div class="flex-container-right-header">
       <%= image_tag(@meetup.user.imagelink, class:"avatar") %>
       <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
-
+      </div>
       <div id="map" style="width: 100%; height: 400px;" data-markers="<%= @markers.to_json %>"
       ></div>
-
     </div>
   </div>
 
   <div class="row">
+    <p>Other meetups that <span><%= @meetup.user.email.split("@")[0].capitalize %> organise! </span></p>
     <% count = 0 %>
     <% @meetups.each do |meetup| %>
     <% unless meetup == @meetup %>
@@ -56,10 +57,13 @@
       <% end %>
     <% end %>
   </div>
-
 </div>
 
 
 <div class="bottom_nav">
-  hggngnhgn
+  <div class="bottom-nav-content">
+    <%= image_tag "rever.png", height: 50 %>
+    <h2><%= @meetup.title.capitalize %></h2>
+  </div class="rever_button">
+  <a href="">Book now</a>
 </div>
