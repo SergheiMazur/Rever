@@ -37,6 +37,10 @@
       <%= image_tag(@meetup.user.imagelink, class:"avatar") %>
       <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
       </div>
+      <p>Other atendees:</p>
+      <% @meetup.users.each do |user| %>
+        <p><%= user.fullname %></p>
+      <% end %>
       <div id="map" style="width: 100%; height: 400px;" data-markers="<%= @markers.to_json %>"
       ></div>
     </div>
@@ -67,7 +71,7 @@
   </div>
 
 
-<%= link_to "#" do %>
+<%= link_to meetup_guests_path(@meetup), method: :post do %>
   <div class="rever_button">
     Book now
   </div>

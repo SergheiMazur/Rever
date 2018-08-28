@@ -5,6 +5,10 @@ class GuestsController < ApplicationController
   end
 
   def create
+    @guest = Guest.new(user_id: current_user.id, meetup_id: params[:meetup_id])
+    @guest.save
+
+    redirect_to meetup_path(params[:meetup_id])
   end
 
   def accept
