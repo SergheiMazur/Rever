@@ -38,9 +38,9 @@ games.each_with_index do |game, index|
     )
 end
 
-meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, start_date: Time.now, end_date: Time.now + 1*60*60, user:alex, game:Game.find(Game.first.id + 1))
-meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, start_date: Time.now + 2*60*60, end_date: Time.now + 4*60*60, user:alex, game:Game.find(Game.first.id + 3))
-meetup3 = Meetup.create!(title: "Go play !!!", location: "Coopérative d'habitation du Châtelet, 5308A Av du Parc, Montréal, QC H2V 4G7", start_time: Time.now, end_time: Time.now + 1*60*60, start_date: Time.now, end_date: Time.now + 1*60*60, user:serghei, game:Game.find(Game.first.id + 2))
+meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:alex, game:Game.find(Game.first.id + 1))
+meetup2 = Meetup.create!(title: "Kingdom Hearts battle", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, date: Time.now + 2*60*60, user:alex, game:Game.find(Game.first.id + 3))
+meetup3 = Meetup.create!(title: "Go play !!!", location: "Coopérative d'habitation du Châtelet, 5308A Av du Parc, Montréal, QC H2V 4G7", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:serghei, game:Game.find(Game.first.id + 2))
 
 
 Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)
