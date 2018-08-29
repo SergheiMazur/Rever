@@ -4,7 +4,10 @@
   <div class="flex-container">
     <div class="flex-container-left">
       <h2 class="body-font"> <%= @meetup.title.capitalize %> </h2>
-      <p2 class=""> <%= @meetup.description.capitalize %> </p2>
+
+      <p2 class=""> <%= @meetup.description %> </p2>
+
+
       <div class="icons-container">
         <div class="event-icons">
           <%= image_tag("trophy-solid.svg", class: "h-1") %>
@@ -20,35 +23,44 @@
         </div>
         <div class="event-icons">
           <%= image_tag("clock-regular.svg", class: "h-1") %>
-          <h4><%= @meetup.start_time.strftime("%I:%M:%S %p") %> --- <%= @meetup.end_time.strftime("%I:%M:%S %p") %></h4>
+          <h4><%= @meetup.start_time.strftime("%I:%M") %> - <%= @meetup.end_time.strftime("%I:%M") %></h4>
         </div>
       </div>
+        <div row>
+          <div class="col-md-1" style="padding-left: 0px; padding-top: 10px;">
+            <%= image_tag(@meetup.user.imagelink, class:"avatar avatar-border") %>
+          </div>
+            <div class="col-md-8" style="padding-left: 23px;  padding-top: 10px;">
+             <h4>Hosted by: <span><%= @meetup.user.fullname %></span> </h4>
+            </div>
+        </div>
     </div>
     <div class="flex-container-right">
+
       <div id="map" class="map-details-show" data-markers="<%= @markers.to_json %>">
       </div>
     </div>
   </div>
-  <div class="flex-container-right-header">
-    <%= image_tag(@meetup.user.imagelink, class:"avatar") %>
-    <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
-  </div>
+
   <p>Other atendees:</p>
   <% @meetup.guests.each do |guest| %>
     <%= render "shared/card_avatar_profile", guest: guest %>
   <% end %>
 </div>
-<div class="bottom_nav">
-  <div class="bottom-nav-content">
-    <%= image_tag "rever.png", height: 50 %>
-    <h2><%= @meetup.title.capitalize %></h2>
-    <%= link_to meetup_guests_path(@meetup), method: :post do %>
-      <div class="rever_button">
-        Book now
-      </div>
-    <% end %>
+
+<% if current_user != @meetup.user %>
+  <div class="bottom_nav" style="background-color: red;">
+    <div class="bottom-nav-content">
+      <%= image_tag "rever.png", height: 50 %>
+      <h2><%= @meetup.title.capitalize %></h2>
+      <%= link_to meetup_guests_path(@meetup), method: :post do %>
+        <div class="rever_button">
+          Book now
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
 
 
 
