@@ -2,17 +2,15 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: [:show]
   # GET /profile
   def index
-    @host = true
-    if params[:type] == "guest"
-      @host = false
-      current_user_bookings = Guest.where(user:current_user)
-      @meetups = []
-      current_user_bookings.each do |booking|
-        @meetups << booking.meetup
-      end
-    else
-      @meetups = current_user.meetups
+    current_user_bookings = Guest.where(user:current_user)
+    @meetups = []
+
+    current_user_bookings.each do |booking|
+      @meetups << booking.meetup
     end
+
+    # [1,2,3].concat(["a", "b", "c"]) #=> [1,2,3, "a", "b", "c"]
+    @meetups.concat(current_user.meetups)
   end
 
   # GET /profile/1
