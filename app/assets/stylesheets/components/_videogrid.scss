@@ -4,11 +4,19 @@
 }
 
 .live-grid {
-  display: grid;
+  display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.videos {
+  height: 100px;
+  flex: 1 1 200px;
+  background-color: red;
 }
 
 .video1 {
+
 
 }
 
