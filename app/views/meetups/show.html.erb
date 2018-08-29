@@ -1,78 +1,74 @@
 <div class="banner" style="background-image: url(<%= asset_path("room1.png") %>)">
 </div>
-
 <div class="container">
-
   <div class="flex-container">
-
     <div class="flex-container-left">
-      <h2 class="body-font"> <%= @meetup.title.capitalize %> </h2>
-      <p2 class="">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p2>
+      <h2 class="body-font"> <strong><%= @meetup.title.capitalize %></strong> </h2>
 
-      <div class="icons-container">
+      <div class="meetup-tags">
         <div class="event-icons">
           <%= image_tag("trophy-solid.svg", class: "h-1") %>
           <h4><%= @meetup.game.name %></h4>
         </div>
-
         <div class="event-icons">
-          <%= image_tag("gamepad-solid.svg", class: "h-1", class: "h-1") %>
+          <%= image_tag("gamepad-solid.svg", class: "h-1") %>
           <h4><%= @meetup.game.platform.name%></h4>
         </div>
-
-        <div class="event-icons">
-          <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
-          <h4><%= @meetup.start_time.strftime("%A, %b %d") %></h4>
-        </div>
-
-        <div class="event-icons">
-          <%= image_tag("clock-regular.svg", class: "h-1") %>
-          <h4><%= @meetup.start_time.strftime("%I:%M:%S %p") %> --- <%= @meetup.end_time.strftime("%I:%M:%S %p") %></h4>
-        </div>
       </div>
-    </div>
+      <br>
+      <p2 class=""> <%= @meetup.description %> </p2>
+      <br>
+      <br>
+
+      <div class="meetup-details">
+        <div class="meetup-details-date" style="width: 150px; height: 150px; background-color: green; margin-right: 15px;">
+        </div>
+        <div class="meetup-details-time">
+          <div class="event-icons">
+            <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
+            <h4><%= @meetup.date.strftime("%A, %b %d") %></h4>
+          </div>
+          <div class="event-icons">
+            <%= image_tag("clock-regular.svg", class: "h-1") %>
+            <h4><%= @meetup.start_time.strftime("%I:%M") %> - <%= @meetup.end_time.strftime("%I:%M") %></h4>
+          </div>
+          <div class="event-host">
+              <%= image_tag(@meetup.user.imagelink, class: "avatar avatar-border") %>
+              <h4>Hosted by: <span><%= @meetup.user.fullname %></span> </h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
     <div class="flex-container-right">
-      <div class="flex-container-right-header">
-      <%= image_tag(@meetup.user.imagelink, class:"avatar") %>
-      <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
+
+      <div id="map" class="map-details-show" data-markers="<%= @markers.to_json %>">
       </div>
-      <p>Other atendees:</p>
-      <% @meetup.users.each do |user| %>
-        <p><%= user.fullname %></p>
-      <% end %>
-      <div id="map" style="width: 100%; height: 400px;" data-markers="<%= @markers.to_json %>"
-      ></div>
     </div>
   </div>
 
+  <p>Other atendees:</p>
   <div class="row">
-    <p>Other meetups that <span><%= @meetup.user.email.split("@")[0].capitalize %> organise! </span></p>
-    <% count = 0 %>
-    <% @meetups.each do |meetup| %>
-    <% unless meetup == @meetup %>
-      <div class="col-xs-4" style="margin-top: 80px">
-        <%= render "shared/cards", meetup: meetup %>
-        <%count += 1%>
-          <%if count == 4%>
-            <%break%>
-          <%end%>
-      </div>
-      <% end %>
+    <% @meetup.guests.each do |guest| %>
+      <%= render "shared/card_avatar_profile", guest: guest %>
     <% end %>
   </div>
 </div>
 
-
-<div class="bottom_nav">
-  <div class="bottom-nav-content">
-    <%= image_tag "rever.png", height: 50 %>
-    <h2><%= @meetup.title.capitalize %></h2>
-  </div>
-
-
-<%= link_to meetup_guests_path(@meetup), method: :post do %>
-  <div class="rever_button">
-    Book now
+<% if current_user != @meetup.user %>
+  <div class="bottom_nav" style="background-color: red;">
+    <div class="bottom-nav-content">
+      <%= image_tag "rever.png", height: 50 %>
+      <h2><%= @meetup.title.capitalize %></h2>
+      <%= link_to meetup_guests_path(@meetup), method: :post do %>
+        <div class="rever_button">
+          Book now
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
+
+
+

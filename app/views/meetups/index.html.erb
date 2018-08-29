@@ -1,9 +1,9 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-  <h1>Hangout in your Area</h1>
+  <h1>Hangouts in your Area</h1>
   <%= render 'form_filters'%>
   <div>
-    <p class="space">You have <%= pluralize(@meetups.count, "hangout") %> in your area.</p>
+    <center> <h1>You have <%= pluralize(@meetups.count, "hangout") %> in your area.</h1> </center>
   </div>
 </div>
 
@@ -20,8 +20,8 @@
     </div>
     <div class="col-sm-4">
       <div
+        class = "map-details"
         id="map"
-        style="height: 600px;"
         data-markers="<%= @markers.to_json %>"
       ></div>
     </div>

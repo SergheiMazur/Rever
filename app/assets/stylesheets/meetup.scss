@@ -1,0 +1,16 @@
+.meetup-tags {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.meetup-details{
+  display: flex;
+}
+
+
+.meetup-details-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
