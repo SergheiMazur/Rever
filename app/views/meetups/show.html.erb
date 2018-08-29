@@ -43,9 +43,11 @@
   </div>
 
   <p>Other atendees:</p>
-  <% @meetup.guests.each do |guest| %>
-    <%= render "shared/card_avatar_profile", guest: guest %>
-  <% end %>
+  <div class="row">
+    <% @meetup.guests.each do |guest| %>
+      <%= render "shared/card_avatar_profile", guest: guest %>
+    <% end %>
+  </div>
 </div>
 
 <% if current_user != @meetup.user %>
