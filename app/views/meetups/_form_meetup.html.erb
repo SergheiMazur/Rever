@@ -1,0 +1,68 @@
+
+   <%= form_tag meetups_path, method: :post do %>
+    <div class="row">
+      <div class='col-xs-12'>
+        <div class="form-group">
+          <div class='input-group' >
+            <input name="title" type='text' class="form-control" value="<%= params[:location] %>"placeholder="Title"/>
+          </div>
+        </div>
+      </div>
+      <div class='col-xs-12'>
+        <div class="form-group">
+          <div class='input-group'>
+            <input name="location" type='text' class="form-control" value="<%= params[:location] %>" placeholder="Location" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class='col-xs-12'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                  <label for="date"></label>
+                    <input name="date" type='text' class="form-control" value="<%= params[:date] %>" placeholder="Date"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="input-group bootstrap-timepicker timepicker form-group">
+            <input name="start_time" id="timepicker1" type="text" value="<%= params[:start_time] %>" class="form-control input-small">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+          </div>
+        </div>
+        <div class="col-sm-6">
+         <div class="input-group bootstrap-timepicker timepicker form-group">
+          <input name="end_time" id="timepicker2" type="text" value="<%= params[:end_time] %>" class="form-control input-small">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+         </div>
+      </div>
+    </div>
+     <!--  <select class="js-example-basic-single rever_button" name="platform_id">
+        <option value="<%= params[:platform_id] %>">Platforms</option>
+        <% Platform.all.each do |platform| %>
+          <option value="<%= platform.id %>">
+          <%= platform.name %>
+          </option>
+        <% end %>
+      </select>
+      <hr> -->
+       <select class="js-example-basic-single rever_button" name="game_id">
+        <option value="<%= params[:game_id] %>">Games</option>
+        <% Game.all.each do |game| %>
+          <option value="<%= game.id %>">
+          <%= game.name %>
+          </option>
+        <% end %>
+      </select>
+      <center>
+         <input class="btn btn-primary custom-btn" type="submit" value="Submit">
+      </center>
+  </div>
+</div>
+  <% end %>
