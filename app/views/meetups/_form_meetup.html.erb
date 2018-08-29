@@ -3,7 +3,7 @@
     <div class="row">
       <div class='col-xs-12'>
         <div class="form-group">
-          <div class='input-group' >
+          <div class='input-group input-width-title' >
             <input name="title"  class="input-width-title" type='text' class="form-control" value="<%= params[:title] %>"placeholder="Title"/>
           </div>
         </div>
@@ -52,7 +52,7 @@
         <% end %>
       </select>
       <hr> -->
-       <select class="js-example-basic-single rever_button" name="game_id">
+       <select class="js-example-basic-single form-button" name="game_id">
         <option value="<%= params[:game_id] %>">Games</option>
         <% Game.all.each do |game| %>
           <option value="<%= game.id %>">
