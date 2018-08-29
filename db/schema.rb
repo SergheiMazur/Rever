@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_174920) do
+ActiveRecord::Schema.define(version: 2018_08_29_171109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_174920) do
     t.time "start_time"
     t.time "end_time"
     t.date "date"
+    t.string "description"
     t.index ["game_id"], name: "index_meetups_on_game_id"
     t.index ["user_id"], name: "index_meetups_on_user_id"
   end

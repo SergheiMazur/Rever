@@ -103,6 +103,6 @@ class MeetupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meetup_params
-      params.permit(:title, :location, :start_time, :end_time, :date, :game_id)
+      params.permit(:title, :description, :location, :start_time, :end_time, :date, :game_id)
     end
 end
