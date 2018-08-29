@@ -1,5 +1,15 @@
-<h2 class="profile-header"> Your Profile </h2>
-  <span> <%= current_user.email.split("@")[0].capitalize %> </span><span <%= current_user.email %>></span>
+
+<div class="profile-page">
+  <h2 class="profile-header"> Your Profile </h2>
+    <div class="profile-wrapper">
+      <div class= "profile-text">
+        <%= image_tag(current_user.imagelink, class:"avatar") %>
+        <%=current_user.email.split("@")[0].capitalize %>
+        <%=current_user.email %>
+        <p>Total Hangouts: 1,492 ★</p>
+      </div>
+    </div>
+</div>
 
 <div class="profilecards-container">
   <div class="row">
@@ -13,19 +23,32 @@
               <h2><%= meetup.date.strftime("%b") %></h2>
             </div>
             <div class="right-card-flex">
-              <p><%= meetup.title %></p>
-              <p><%= meetup.location %></p>
-              <p><%= meetup.start_time %></p>
+              <p class="meetup-title"><%= meetup.title %></p>
+              <p>Attendees: <%= meetup.guests.size %> </p><%#= "Guest".pluralize(meetup.guests.size) %>
+              <% if meetup.user == current_user %>
+              <p>Pending requests: <%= meetup.guests.where(current_status: "Pending").count%></p>
+              <% else %>
+              <p>Your request: <%= meetup.guests.find_by(user: current_user).current_status %></p>
+              <% end %>
             </div>
           </div>
 
-          <div class="middle-box">
-            <span>Guests: <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %> </span><span>Your Request: <%=  %></span>
-          </div>
+        <div class="middle-box">
 
-          <div class="bottom-box">
-            <h2>hosted by <%= meetup.user.email.split("@")[0].capitalize %></h2>
-          </div>
+          <p class="meetup-location">Location: <%= meetup.location %></p>
+          <p class="meetup-time">Time: <%= meetup.start_time %></p>
+        </div>
+
+          <% if meetup.user == current_user %>
+            <div class="bottom-box-host">
+              <h2>Your are Hosting</h2>
+            </div>
+          <% else %>
+            <div class="bottom-box-guest">
+              <h2>Hosted by <%= meetup.user.email.split("@")[0].capitalize %></h2>
+            </div>
+          <% end %>
+
 
         </div>
       </div>

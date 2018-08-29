@@ -1,11 +1,31 @@
+.profile-header {
+  color: white;
+}
+
+.profile-wrapper {
+  border: white;
+}
+
+.profile-text {
+  color: white;
+  font: 12px;
+  padding-bottom: 100px;
+}
+
+.meetup-card {
+  background-color: #48474F;
+}
+
 .top-flex {
   position: relative;
   color: #3D9970;
-  min-height: 200px;
+  height: 150px;
+  background-color: #48474F;
 }
 
 .left-card-flex{
-  border: solid 1px $green;
+  border: solid 1px #00FF00;
+  color: #00FF00;
   background-color: black;
   height: 100px;
   position: absolute;
@@ -27,16 +47,40 @@
 }
 
 .right-card-flex {
+  background-color: #48474F;
   position: absolute;
   top: 5px;
   right: 5px;
   width: calc(100% - 140px);
 }
 
-.bottom-box {
-  background-color: #3D9970;
+.middle-box {
+  background-color: #48474F;
 }
 
-.meetup-card {
-  background-color: $green;
+.bottom-box-host {
+  background-color: #00FF00;
+  text-align: center;
 }
+
+.bottom-box-guest {
+  background-color: #3D9970;
+  text-align: center;
+}
+
+.meetup-time {
+  color: white;
+  font: 12px;
+}
+
+.meetup-location {
+  color: white;
+  font: 12px;
+}
+
+.meetup-title {
+  color: white;
+  font: 20px;
+  font-weight: bold;
+}
+
