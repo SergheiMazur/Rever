@@ -3,38 +3,44 @@
 <div class="container">
   <div class="flex-container">
     <div class="flex-container-left">
-      <h2 class="body-font"> <%= @meetup.title.capitalize %> </h2>
+      <h2 class="body-font"> <strong><%= @meetup.title.capitalize %></strong> </h2>
 
-      <p2 class=""> <%= @meetup.description %> </p2>
-
-
-      <div class="icons-container">
+      <div class="meetup-tags">
         <div class="event-icons">
           <%= image_tag("trophy-solid.svg", class: "h-1") %>
           <h4><%= @meetup.game.name %></h4>
         </div>
         <div class="event-icons">
-          <%= image_tag("gamepad-solid.svg", class: "h-1", class: "h-1") %>
+          <%= image_tag("gamepad-solid.svg", class: "h-1") %>
           <h4><%= @meetup.game.platform.name%></h4>
         </div>
-        <div class="event-icons">
-          <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
-          <h4><%= @meetup.date.strftime("%A, %b %d") %></h4>
-        </div>
-        <div class="event-icons">
-          <%= image_tag("clock-regular.svg", class: "h-1") %>
-          <h4><%= @meetup.start_time.strftime("%I:%M") %> - <%= @meetup.end_time.strftime("%I:%M") %></h4>
-        </div>
       </div>
-        <div row>
-          <div class="col-md-1" style="padding-left: 0px; padding-top: 10px;">
-            <%= image_tag(@meetup.user.imagelink, class:"avatar avatar-border") %>
-          </div>
-            <div class="col-md-8" style="padding-left: 23px;  padding-top: 10px;">
-             <h4>Hosted by: <span><%= @meetup.user.fullname %></span> </h4>
-            </div>
+      <br>
+      <p2 class=""> <%= @meetup.description %> </p2>
+      <br>
+      <br>
+
+      <div class="meetup-details">
+        <div class="meetup-details-date" style="width: 150px; height: 150px; background-color: green; margin-right: 15px;">
         </div>
-    </div>
+        <div class="meetup-details-time">
+          <div class="event-icons">
+            <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
+            <h4><%= @meetup.date.strftime("%A, %b %d") %></h4>
+          </div>
+          <div class="event-icons">
+            <%= image_tag("clock-regular.svg", class: "h-1") %>
+            <h4><%= @meetup.start_time.strftime("%I:%M") %> - <%= @meetup.end_time.strftime("%I:%M") %></h4>
+          </div>
+          <div class="event-host">
+              <%= image_tag(@meetup.user.imagelink, class: "avatar avatar-border") %>
+              <h4>Hosted by: <span><%= @meetup.user.fullname %></span> </h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     <div class="flex-container-right">
 
       <div id="map" class="map-details-show" data-markers="<%= @markers.to_json %>">
