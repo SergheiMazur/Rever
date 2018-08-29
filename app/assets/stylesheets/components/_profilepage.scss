@@ -1,0 +1,42 @@
+.top-flex {
+  position: relative;
+  color: #3D9970;
+  min-height: 200px;
+}
+
+.left-card-flex{
+  border: solid 1px $green;
+  background-color: black;
+  height: 100px;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  h1 {
+    margin-top: 0px;
+    border-bottom: solid 1px $green;
+    margin-bottom: 0px;
+  }
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  text-align: center;
+}
+
+.right-card-flex {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: calc(100% - 140px);
+}
+
+.bottom-box {
+  background-color: #3D9970;
+}
+
+.meetup-card {
+  background-color: $green;
+}

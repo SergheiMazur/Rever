@@ -1,40 +1,32 @@
 <!-- Banner Start-->
 <div class="home">
-  <div class="title-container">
-    <div class="background-container">
-
-      <h1 class="header-font">Welcome to</h1>
-      <h1>
-        <em>R</em>
-        <em class="planet left">E</em>
-        <em>V</em>
-        <em class="planet right">E</em>
-        <em>R</em>
-      </h1>
-    </div>
-    <p></p>
+  <div class= "header-container">
+    <div class="title1">Welcome to</div>
+    <div class="title2">Rever</div>
+    <div class="subtitle1">Games + Friends + Hangouts</div>
+  </div>
     <!-- Paragraph -->
-    <div class="body-container">
+<!--     <div class="body-container">
         <p class="line-1 anim-typewriter">What game do you want to play today?</p>
-    </div>
-      <div class="search-container">
-          <%= form_tag meetups_path, {method: :get, :class => 'comment_form'} do %>
-          <%= text_field_tag :query,
-            params[:query]%>
-            <a href=""></a>
-          <%= button_tag "",:class => 'fa fa-2x fa-search', placeholder: "Search for a game" %>
-          <% end %>
-      </div>
+    </div> -->
+  <div class="search-container">
+    <%= form_tag meetups_path, {method: :get, :class => 'search-home'} do %>
+    <%= text_field_tag :query,
+      params[:query],  placeholder: "Search for a game", class: "placeholder-search"%>
+      <a href=""></a>
+    <%= button_tag "",:class => 'fa fa-2x fa-search'%>
+    <% end %>
   </div>
 </div>
 
-<div class="container" >
-  <div class="container-bottom">
-    <p class="container-cards">Browse Hangouts in Your Area</p>
-    <% @meetups.each do |meetup| %>
-      <div class="col-xs-3">
-        <%= render "shared/cards", meetup: meetup %>
-      </div>
+
+  <div class="container" >
+    <div class="container-bottom">
+      <p class="container-cards">Browse Hangouts in Your Area</p>
+      <% @meetups.each do |meetup| %>
+    <div class="col-xs-3">
+      <%= render "shared/cards", meetup: meetup %>
+    </div>
     <% end %>
     <div
       id="map"
@@ -45,6 +37,7 @@
     ></div>
   </div>
 </div>
+
 
 
 

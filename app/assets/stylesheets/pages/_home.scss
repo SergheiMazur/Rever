@@ -2,27 +2,29 @@
 .home {
   width: 100%;
   height: 90vh;
-  display: flex;
   // background-image: linear-gradient(45deg,rgba(80, 80, 80, 0.8), rgba(80, 80, 80, 0.9)), url(http://cdn.wegotthiscovered.com/wp-content/uploads/2017/08/3245626-xlarge.img_.jpg);
   background-size: cover;
   background-color: black;
-}
-
-.title-container {
-  flex: 1 1 70%;
-  margin-top: 80px;
-  align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: space mono;
-  font-size: 40px;
+  align-items: center;
+
+}
+
+.search-home {
+  width: 400px;
+}
+
+.placeholder-search {
+  font-size: 34px;
+  color: #00FF00;
 }
 
 .search-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 90px;
+  position: absolute;
+  top: 53%;
+  left: 42%;
+  width: 57%;
 }
 
 .container-bottom {
@@ -45,123 +47,132 @@
   font-weight: bold;
 }
 
-.background-container {
-  background-image: url(https://i.gifer.com/IrS.gif);
-  background-size: cover;
-  width: 100%;
-  text-align: center;
-}
 
-// html{
-//   min-height: 100%;
-//   overflow: hidden;
-// }
 .body-container {
   display: flex;
   align-items: center;
   color: #01FF70;
 }
 
-.line-1 {
-  color: #01FF70;
-  margin-top: 190px;
-  font-family: razer;
-  position: relative;
-  top: 50%;
-  width: 14em;
-  margin: 0 auto;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
-  font-size: 20px;
-  // font-family: 'Anonymous Pro', monospace;
-  background-color: rgb(0,0,0);
+
+//starry header
+
+@mixin center(){
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+    left:50%;
+    top:30%;
+    width: 500px;
 }
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,,800,900);
+
+.header-container{
+  position:absolute;
+  @include center();
+  html {
+  width:120%;
+  height: 120%;
+}
+  body {
+  background: -webkit-linear-gradient(rgb(235, 236, 231), rgb(255, 255, 255));
+  background: linear-gradient(rgb(235, 236, 231), rgb(255, 255, 255));
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+}
+.title1 {
+  font-weight: 400;
+  color: transparent;
+  font-size:85px;
+  background: url("https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat;
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  position:relative;
+  text-align:center;
+  line-height:90px;
+  letter-spacing: -8px;
+  left: -45%;
+}
+
+.title2 {
+  font-weight: 800;
+  color: transparent;
+  font-size:200px;
+  background: url("https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg") repeat;
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  position:relative;
+  text-align:center;
+  line-height:153px;
+  letter-spacing: -8px;
+}
+.subtitle1{
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top:10px;
+  font-size: 28px;
+  color: white;
+}
+
+
+//animate
+
+// .line-1 {
+//   color: #01FF70;
+//   margin-top: 190px;
+//   font-family: razer;
+//   position: relative;
+//   top: 50%;
+//   width: 14em;
+//   margin: 0 auto;
+//   text-align: center;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   transform: translateY(-50%);
+//   font-size: 20px;
+//   // font-family: 'Anonymous Pro', monospace;
+//   background-color: rgb(0,0,0);
+// }
 
 /* Animation */
-.anim-typewriter {
-  animation: typewriter 1s steps(44) 2s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 24em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
+// .anim-typewriter {
+//   animation: typewriter 1s steps(44) 2s 1 normal both,
+//              blinkTextCursor 500ms steps(44) infinite normal;
+// }
+// @keyframes typewriter{
+//   from{width: 0;}
+//   to{width: 24em;}
+// }
+// @keyframes blinkTextCursor{
+//   from{border-right-color: rgba(255,255,255,.75);}
+//   to{border-right-color: transparent;}
+// }
 
-video#bgvid {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  overflow: hidden;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
+// video#bgvid {
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   overflow: hidden;
+//   min-width: 100%;
+//   min-height: 100%;
+//   width: auto;
+//   height: auto;
+//   z-index: -100;
+//   -ms-transform: translateX(-50%) translateY(-50%);
+//   -moz-transform: translateX(-50%) translateY(-50%);
+//   -webkit-transform: translateX(-50%) translateY(-50%);
+//   transform: translateX(-50%) translateY(-50%);
+// }
 
-.profile-header {
- font-family: titillium;
-}
+// .profile-header {
+//  font-family: titillium;
+// }
 
-//going on a limb
-
-em {
-  font-family: 'Josefin Sans', sans-serif;
-  color: currentColor;
-  font-size: 15vmin;
-  position: relative;
-  font-style: normal;
-  width: 20vmin;
-  text-align: center;
-}
-
-em.planet {
-  -webkit-animation: planet-rotate 4s linear infinite;
-  animation: planet-rotate 4s linear infinite;
-  position: relative;
-}
-
-em.planet::before {
-  content: "";
-  position: absolute;
-  top: -.5vmin;
-  left: 3.5vmin;
-  z-index: -1;
-  width: 13vmin;
-  height: 13vmin;
-  border-radius: 50%;
-  background: black;
-}
-
-em.planet.left {
-  -webkit-transform-origin: 40vmin 5vmin;
-  transform-origin: 40vmin 5vmin;
-}
-
-em.planet.right {
-  -webkit-transform-origin: -20vmin 5vmin;
-  transform-origin: -20vmin 5vmin;
-}
-
-@-webkit-keyframes planet-rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-  }
-}
-
-@keyframes planet-rotate {
-  to {
-    transform: rotate(1turn);
-  }
-}
 
