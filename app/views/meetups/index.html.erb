@@ -1,80 +1,29 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
   <h1>Hangout in your Area</h1>
-  <%= form_tag meetups_path, method: :get do %>
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input name="start_date" type='text' class="form-control" value="<%= params[:start_date] %>" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker2'>
-                    <input name="end_date" type='text' class="form-control" value="<%= params[:end_date] %>"/>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="input-group bootstrap-timepicker timepicker form-group">
-            <input name="start_time" id="timepicker1" type="text" value="" class="form-control input-small">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-          </div>
-        </div>
-        <div class="col-sm-6">
-         <div class="input-group bootstrap-timepicker timepicker form-group">
-          <input name="end_time" id="timepicker2" type="text" value="" class="form-control input-small">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-         </div>
-      </div>
-    </div>
-      <select class="js-example-basic-single rever_button" name="platform_id">
-        <option value="">Platforms</option>
-        <% Platform.all.each do |platform| %>
-          <option value="<%= platform.id %>">
-          <%= platform.name %>
-          </option>
-        <% end %>
-      </select>
-      <hr>
-      <center>
-        <%= submit_tag "Search", class: "rever_button filter_button" %>
-      </center>
-  </div>
-</div>
-  <% end %>
+  <%= render 'form_filters'%>
   <div>
     <p class="space">You have <%= pluralize(@meetups.count, "hangout") %> in your area.</p>
   </div>
-  <div class="row d-inline-block">
-    <div  style="width: 65%;">
-      <% @meetups.each do |meetup| %>
-      <div class="col-xs-4">
-        <%= render "shared/cards", meetup: meetup %>
-      </div>
-      <% end %>
-      </div>
-        <div
-          id="map"
-          style="width: 35%;
-          height: 600px;
-          margin-top: 18px;
-          float: right;"
-          data-markers="<%= @markers.to_json %>"
-        ></div>
-    </div>
-  <br>
 </div>
 
-
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <% @meetups.each do |meetup| %>
+          <div class="col-xs-4">
+            <%= render "shared/cards", meetup: meetup %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div
+        id="map"
+        style="height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
+    </div>
+  </div>
+</div>

@@ -12,8 +12,9 @@
     <% if user_signed_in? %>
 
       <!-- Avatar with dropdown menu -->
-      <div class="hostbutton">
-        <%= link_to "Become a Host!", new_meetup_path, class: "btn btn-primary custom-btn" %>
+      <div  class="btn btn-primary custom-btn" data-toggle="modal" data-target="#myModal">
+        Become a Host!
+
       </div>
 
       <div class="navbar-wagon-item">
@@ -79,6 +80,21 @@
         <h2>Signup</h2>
       </div>
       <%= render partial: "devise/registrations/new" %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content modal-theme">
+
+      <div class="modal-header">
+        <h4 class="modal-title modal-font" id="myModalLabel">New Hang Out</h4>
+      </div>
+
+      <div class="modal-body">
+        <%= render 'meetups/form_meetup' %>
+      </div>
     </div>
   </div>
 </div>

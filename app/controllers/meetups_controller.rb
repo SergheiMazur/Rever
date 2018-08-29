@@ -17,11 +17,11 @@ class MeetupsController < ApplicationController
     end
 
     if params[:start_date].present? && params[:end_date].present?
-      @meetups = @meetups.where("date > ? AND date < ?", Date.strptime(params[:start_date], "%m/%d/%Y"), Date.strptime(params[:end_date], "%m/%d/%Y"))
+      @meetups = @meetups.where("date >= ? AND date <= ?", Date.strptime(params[:start_date], "%m/%d/%Y"), Date.strptime(params[:end_date], "%m/%d/%Y"))
     end
 
     if params[:start_time].present? && params[:end_time].present?
-      @meetups = @meetups.where("start_time > ? AND end_time < ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
+      @meetups = @meetups.where("start_time >= ? AND end_time <= ?", DateTime.parse(params[:start_time]), DateTime.parse(params[:end_time]))
     end
 
     @meetups_with_arddess = @meetups.where.not(latitude: nil, longitude: nil)
@@ -59,7 +59,7 @@ class MeetupsController < ApplicationController
 
   # POST /meetups
   def create
-    @game = Game.find_by(name: params[:meetup][:game_name])
+    @game = Game.find(params[:game_id])
     @meetup = Meetup.new(meetup_params)
     @platforms = Platform.all
     @meetup.user = current_user
@@ -103,6 +103,6 @@ class MeetupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meetup_params
-      params.require(:meetup).permit(:title, :location, :start_time, :end_time)
+      params.permit(:title, :location, :start_time, :end_time, :date, :game_id)
     end
 end
