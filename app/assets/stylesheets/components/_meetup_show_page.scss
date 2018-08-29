@@ -17,19 +17,39 @@
 }
 
 .event-icons {
+  margin-right: 10px;
   display: flex;
-  height: 80px;
   justify-content: flex-start;
   align-items: center;
   h4 {
+    font-size: 16px;
     &:hover {
       color: white;
     }
   }
 
   img {
-    width: 80px;
-    padding-right: 30px;
+    width: 35px;
+    height: 35px;
+    padding-right: 10px;
+  }
+}
+
+
+.event-host {
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  h4 {
+    font-size: 16px;
+    &:hover {
+      color: white;
+    }
+  }
+
+  img {
+    margin-right: 10px;
   }
 }
 
