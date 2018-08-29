@@ -1,0 +1,11 @@
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+<%= link_to user_profile_path(guest.user) do%>
+<div class="card-show-page">
+  <%= image_tag guest.user.imagelink, class: "avatar-lg" %>
+  <div class="container-fluid">
+    <p><%= guest.user.fullname.capitalize %></p>
+    <h4>Member</h4>
+  </div>
+</div>
+<% end %>
+</div>
