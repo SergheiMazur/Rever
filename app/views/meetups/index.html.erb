@@ -1,29 +1,29 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
   <h1>Hangout in your Area</h1>
-    <%= render 'form_filters'%>
+  <%= render 'form_filters'%>
   <div>
     <p class="space">You have <%= pluralize(@meetups.count, "hangout") %> in your area.</p>
   </div>
-  <div class="row d-inline-block">
-    <div  style="width: 65%;">
-      <% @meetups.each do |meetup| %>
-      <div class="col-xs-4">
-        <%= render "shared/cards", meetup: meetup %>
-      </div>
-      <% end %>
-      </div>
-        <div
-          id="map"
-          style="width: 35%;
-          height: 600px;
-          margin-top: 18px;
-          float: right;"
-          data-markers="<%= @markers.to_json %>"
-        ></div>
-    </div>
-  <br>
 </div>
 
-
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+        <% @meetups.each do |meetup| %>
+          <div class="col-xs-4">
+            <%= render "shared/cards", meetup: meetup %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div
+        id="map"
+        style="height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
+    </div>
+  </div>
+</div>
