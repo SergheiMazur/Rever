@@ -22,7 +22,7 @@
 
         <div class="event-icons">
           <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
-          <h4><%= @meetup.start_time.strftime("%A, %b %d") %></h4>
+          <h4><%= @meetup.date.strftime("%A, %b %d") %></h4>
         </div>
 
         <div class="event-icons">
@@ -33,34 +33,19 @@
     </div>
 
     <div class="flex-container-right">
-      <div class="flex-container-right-header">
-      <%= image_tag(@meetup.user.imagelink, class:"avatar") %>
-      <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
-      </div>
-      <p>Other atendees:</p>
-      <% @meetup.users.each do |user| %>
-        <p><%= user.fullname %></p>
-      <% end %>
       <div id="map" style="width: 100%; height: 400px;" data-markers="<%= @markers.to_json %>"
       ></div>
     </div>
   </div>
 
-  <div class="row">
-    <p>Other meetups that <span><%= @meetup.user.email.split("@")[0].capitalize %> organise! </span></p>
-    <% count = 0 %>
-    <% @meetups.each do |meetup| %>
-    <% unless meetup == @meetup %>
-      <div class="col-xs-4" style="margin-top: 80px">
-        <%= render "shared/cards", meetup: meetup %>
-        <%count += 1%>
-          <%if count == 4%>
-            <%break%>
-          <%end%>
-      </div>
-      <% end %>
-    <% end %>
+   <div class="flex-container-right-header">
+    <%= image_tag(@meetup.user.imagelink, class:"avatar") %>
+    <span><%= @meetup.user.email.split("@")[0].capitalize %>, your host</span>
   </div>
+  <p>Other atendees:</p>
+  <% @meetup.users.each do |user| %>
+    <p><%= user.fullname %></p>
+  <% end %>
 </div>
 
 
@@ -68,11 +53,13 @@
   <div class="bottom-nav-content">
     <%= image_tag "rever.png", height: 50 %>
     <h2><%= @meetup.title.capitalize %></h2>
+    <%= link_to meetup_guests_path(@meetup), method: :post do %>
+      <div class="rever_button">
+        Book now
+      </div>
+    <% end %>
   </div>
+</div>
 
 
-<%= link_to meetup_guests_path(@meetup), method: :post do %>
-  <div class="rever_button">
-    Book now
-  </div>
-<% end %>
+
