@@ -1,7 +1,7 @@
-<div class="con_margin">
-  <%= link_to meetup_path(meetup) do %>
-    <div class="example-2 card" style="background: url(<%= asset_url( meetup.game.image_link ) %>) center / cover no-repeat; border-radius: 4px; width: 256px;">
-      <div class="wrapper">
+
+  <%= link_to meetup_path(meetup), class: "card-margin" do %>
+
+      <div class="wrapper" style="background: url(<%= asset_url( meetup.game.image_link ) %>) center / cover no-repeat; border-radius: 4px; width: 100%;">
         <div class="data">
           <div class="content">
             <!-- <h1 class="title"><a> <center> <%= meetup.title %> </center></p> -->
@@ -12,6 +12,6 @@
           </div>
         </div>
       </div>
-    </div>
+
   <% end %>
-</div>
+

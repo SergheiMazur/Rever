@@ -48,7 +48,8 @@ $open-sans: 'Open Sans', sans-serif;
    }
  }
 
-.card {
+
+
  // float: left;
  // padding: 0 1.7rem;
  // width: 30%;
@@ -73,28 +74,35 @@ $open-sans: 'Open Sans', sans-serif;
  //     transform: translate(-50%, 0);
  //   }
  // }
- margin: 1em 0;
+
+.card-margin {
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
  .wrapper {
    min-height: 167px;
    position: relative;
    border: 5px solid #575757;
    border-radius: 2px;
-   width: 256px;
+   width: 100%;
    // border-width: 5px;
    // left: -140px;
    overflow: hidden;
+   margin-bottom: -20px;
    // box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
    &:hover {
      .data {
        transform: translateY(0);
        color: rgba(255, 255, 255, 1);
+
      }
    }
  }
  .data {
    position: absolute;
    bottom: 0;
-   width: 256px;
+   width: 100%;
    transform: translateY(calc(70px + 1em));
    transition: transform 0.3s;
    .content {
@@ -109,7 +117,7 @@ $open-sans: 'Open Sans', sans-serif;
  .title {
    margin-top: 10px;
  }
-}
+
 
 // // Second example styles
 // .example-2 {
