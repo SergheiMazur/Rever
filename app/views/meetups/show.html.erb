@@ -57,16 +57,16 @@
 </div>
 
 <% if current_user != @meetup.user %>
-  <div class="bottom_nav" style="background-color: red;">
+  <div class="bottom_nav" style="background-color: #3D3D3D;">
     <div class="bottom-nav-content">
       <%= image_tag "rever.png", height: 50 %>
       <h2><%= @meetup.title.capitalize %></h2>
-      <%= link_to meetup_guests_path(@meetup), method: :post do %>
+    </div>
+    <%= link_to meetup_guests_path(@meetup), method: :post do %>
         <div class="rever_button">
           Book now
         </div>
       <% end %>
-    </div>
   </div>
 <% end %>
 
