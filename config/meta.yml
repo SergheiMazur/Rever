@@ -1,0 +1,5 @@
+meta_product_name: "Rever"
+meta_title: "Rever - Rever game alone"
+meta_description: "Games + Friends = Fun"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
