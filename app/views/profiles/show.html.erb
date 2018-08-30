@@ -1,41 +1,67 @@
-<h1><%= @user.email %></h1>
+
+<div class="profile-page">
+    <div class="profile-wrapper">
+<!--       <div class= "profile-text">
+        <%= image_tag(current_user.imagelink, class:"avatar") %>
+        <%=current_user.email.split("@")[0].capitalize %>
+        <%=current_user.email %>
+        <p>Total Hangouts: 1,492 ★</p>
+      </div> -->
+    </div>
+</div>
+<div class="container">
+  <h2 class="profile-header"> Upcoming Gaming Sessions </h2>
+  <div class="profilecards-container">
+    <div class="row">
+      <% @meetups.each do |meetup| %>
+        <div class="col-md-6">
+          <%= link_to meetup_path(meetup) do %>
+            <div class="meetup-card">
+
+            <div class="top-flex">
+              <div class="left-card-flex">
+                <h1 class="meetup-time2"><%= meetup.date.strftime("%m") %></h1>
+                <h2 class="meetup-time3"><%= meetup.date.strftime("%b") %></h2>
+              </div>
+              <div class="right-card-flex">
+                <p class="meetup-title"><%= meetup.title %></p>
+                <p class="meetup-general2"><%= meetup.location %></p>
+                <p class="meetup-general3"><%= meetup.start_time.strftime("%I:%M") %> - <%= meetup.end_time.strftime("%I:%M") %></p>
+              </div>
+            </div>
+
+            <div class="middle-box">
+
+                <p class="meetup-general"><span class="meetup-general-blk">Attendees: </span><span> <%= meetup.guests.size %> </span></p><%#= "Guest".pluralize(meetup.guests.size) %>
+                <% if meetup.user == current_user %>
+                  <% if meetup.guests.where(current_status: "Pending").count > 0 %>
+                    <p class="meetup-general" style="color: red;"><span class="meetup-general-blk">Pending requests: </span><span> <%= meetup.guests.where(current_status: "Pending").count%></span></p>
+                  <% else %>
+                    <p class="meetup-general"> <span class="meetup-general-blk">Pending requests: </span><span><%= meetup.guests.where(current_status: "Pending").count%></span></p>
+                  <% end %>
+                <% else %>
+                <p class="meetup-general"><span class="meetup-general-blk">Your request: </span><span><%= meetup.guests.find_by(user: current_user).current_status %></span></p>
+                <% end %>
+            </div>
+
+              <% if meetup.user == current_user %>
+                <div class="bottom-box bottom-box-host">
+                  <h2 class="bottom-box-text">Your are Hosting</h2>
+                </div>
+              <% else %>
+                <div class="bottom-box bottom-box-guest">
+                  <h2 class="bottom-box-text">Hosted by <%= meetup.user.email.split("@")[0].capitalize %></h2>
+                </div>
+              <% end %>
 
 
-
-  <ul class="nav nav-tabs">
-    <li class="active"><%= link_to("Hostings", user_profile_path(type: "host"))  %></li>
-    <li><%= link_to("Attending", user_profile_path(type: "guest"))  %></li>
-  </ul>
-
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col" >Title</th>
-        <th scope="col" >Start time</th>
-        <th scope="col" >End time</th>
-        <th scope="col" >Game</th>
-        <th scope="col" ><%= @host ? "Attending" : "Status" %></th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-  <tbody>
-    <% @meetups.each do |meetup| %>
-      <tr>
-        <td><%= link_to meetup.title, meetup_path(meetup) %></td>
-        <td><%= link_to meetup.user.email, user_profile_path(meetup.user) %></td>
-        <td><%= meetup.location %></td>
-        <td><%= meetup.start_time %></td>
-        <td><%= meetup.end_time %></td>
-        <td><%= meetup.game.name %></td>
-        <% if @host %>
-          <td> <%= meetup.guests.size %> <%= "Guest".pluralize(meetup.guests.size) %></td>
-        <% else %>
-          <td><%= meetup.guests.find_by(user:@user).current_status %></td>
+            </div>
+          </div>
         <% end %>
-      </tr>
-     <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
 
