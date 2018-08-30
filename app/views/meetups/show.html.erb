@@ -3,16 +3,16 @@
 <div class="container">
   <div class="flex-container">
     <div class="flex-container-left">
-      <h2 class="body-font"> <strong><%= @meetup.title.capitalize %></strong> </h2>
+      <h1 class=""> <%= @meetup.title.capitalize %> </h1>
 
       <div class="meetup-tags">
         <div class="event-icons">
           <%= image_tag("trophy-solid.svg", class: "h-1") %>
-          <h4><%= @meetup.game.name %></h4>
+          <p class="show-page-p"><%= @meetup.game.name %></p>
         </div>
         <div class="event-icons">
           <%= image_tag("gamepad-solid.svg", class: "h-1") %>
-          <h4><%= @meetup.game.platform.name%></h4>
+          <p class="show-page-p"><%= @meetup.game.platform.name%></p>
         </div>
       </div>
       <br>
@@ -34,15 +34,15 @@
         <div class="meetup-details-time">
           <div class="event-icons">
             <%= image_tag("calendar-alt-regular.svg", class: "h-1") %>
-            <h4><%= @meetup.date.strftime("%A, %b %d") %></h4>
+            <p class="show-page-p"><%= @meetup.date.strftime("%A, %b %d") %></p>
           </div>
           <div class="event-icons">
             <%= image_tag("clock-regular.svg", class: "h-1") %>
-            <h4><%= @meetup.start_time.strftime("%I:%M") %> - <%= @meetup.end_time.strftime("%I:%M") %></h4>
+            <p class="show-page-p"><%= @meetup.start_time.strftime("%I:%M") %> - <%= @meetup.end_time.strftime("%I:%M") %></p>
           </div>
           <div class="event-host">
               <%= image_tag(@meetup.user.imagelink, class: "avatar avatar-border") %>
-              <h4>Hosted by: <span><%= @meetup.user.fullname %></span> </h4>
+              <p class="show-page-p">Hosted by: <span><%= @meetup.user.fullname %></span> </p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
     </div>
   </div>
 
-  <p>Other attendees:</p>
+  <h1>Other attendees:</h1>
   <div class="row">
     <% @meetup.guests.each do |guest| %>
       <%= render "shared/card_avatar_profile", guest: guest %>
