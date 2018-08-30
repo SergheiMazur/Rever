@@ -1,0 +1,15 @@
+<div class="col-sm-12">
+  <div class="card-attendees">
+    <div class="card-attendees-picture">
+      <%= image_tag guest.user.imagelink, class: "avatar" %>
+      <p><%= guest.user.fullname.capitalize %></p>
+    </div>
+    <div class="card-attendees-status">
+      <h4>Status: <span><%= guest.current_status %></span></h4>
+    </div>
+    <div class="card-attendees-actions">
+      <%= link_to 'Accept', accept_guest_path(guest) , class: "btn btn-primary custom-btn custom-btn-thin", id: "accept" %>
+      <%= link_to 'Reject', reject_guest_path(guest) , class: "btn btn-primary custom-btn custom-btn-thin", id: "reject" %>
+    </div>
+  </div>
+</div>
