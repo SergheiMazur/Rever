@@ -21,7 +21,15 @@
       <br>
 
       <div class="meetup-details">
-        <div class="meetup-details-date" style="width: 150px; height: 150px; background-color: green; margin-right: 15px;">
+        <div class="meetup-details-date" style="width: 150px; height: 150px;  margin-right: 15px;">
+            <div class="top-flex-for-show-page">
+            <div class="left-flex-for-show-page">
+              <h1 class="meetup-time2"><%= @meetup.date.strftime("%d") %></h1>
+              <h2 class="meetup-time3"><%= @meetup.date.strftime("%b") %></h2>
+            </div>
+          </div>
+
+
         </div>
         <div class="meetup-details-time">
           <div class="event-icons">
@@ -47,26 +55,30 @@
       </div>
     </div>
   </div>
-
-  <p>Other atendees:</p>
+  <% already_booked = false %>
+  <p>Other attendees:</p>
   <div class="row">
     <% @meetup.guests.each do |guest| %>
-      <%= render "shared/card_avatar_profile", guest: guest %>
+        <% if current_user == @meetup.user %>
+          <%= render "shared/host_card_avatar", guest: guest %>
+        <% else %>
+          <%= render "shared/card_avatar_profile", guest: guest %>
+        <% end %>
+      <% already_booked = true if guest.user == current_user %>
     <% end %>
   </div>
 </div>
 
-<% if current_user != @meetup.user %>
-  <div class="bottom_nav" style="background-color: red;">
+<% if current_user != @meetup.user && !already_booked %>
+  <div class="bottom_nav" style="background-color: #3D3D3D;">
     <div class="bottom-nav-content">
-      <%= image_tag "rever.png", height: 50 %>
       <h2><%= @meetup.title.capitalize %></h2>
-      <%= link_to meetup_guests_path(@meetup), method: :post do %>
+    </div>
+    <%= link_to meetup_guests_path(@meetup), method: :post do %>
         <div class="rever_button">
           Book now
         </div>
       <% end %>
-    </div>
   </div>
 <% end %>
 

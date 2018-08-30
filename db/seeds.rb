@@ -39,13 +39,37 @@ platforms.each do |platform|
   Platform.create!(name: platform)
 end
 
-games.each_with_index do |game, index|
-  Game.create!(name: game,
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-    image_link: image_links[index],
-    platform:Platform.find(Platform.first.id + index)
-    )
-end
+Game.create!(name: games[0], image_link: image_links[0], platform: Platform.find(Platform.first.id + 1))
+Game.create!(name: games[1], image_link: image_links[1], platform: Platform.find(Platform.first.id + 1))
+Game.create!(name: games[2], image_link: image_links[2], platform: Platform.find(Platform.first.id + 7))
+Game.create!(name: games[3], image_link: image_links[3], platform: Platform.find(Platform.first.id + 3))
+Game.create!(name: games[4], image_link: image_links[4], platform: Platform.find(Platform.first.id + 10))
+Game.create!(name: games[5], image_link: image_links[5], platform: Platform.find(Platform.first.id + 14))
+Game.create!(name: games[6], image_link: image_links[6], platform: Platform.find(Platform.first.id + 12))
+Game.create!(name: games[7], image_link: image_links[7], platform: Platform.find(Platform.first.id + 8))
+Game.create!(name: games[8], image_link: image_links[8], platform: Platform.find(Platform.first.id + 14))
+Game.create!(name: games[9], image_link: image_links[9], platform: Platform.find(Platform.first.id + 6))
+Game.create!(name: games[10], image_link: image_links[10], platform: Platform.find(Platform.first.id + 13))
+Game.create!(name: games[11], image_link: image_links[11], platform: Platform.find(Platform.first.id + 12))
+Game.create!(name: games[12], image_link: image_links[12], platform: Platform.find(Platform.first.id + 13))
+Game.create!(name: games[13], image_link: image_links[13], platform: Platform.find(Platform.first.id + 7))
+Game.create!(name: games[14], image_link: image_links[14], platform: Platform.find(Platform.first.id + 8))
+Game.create!(name: games[15], image_link: image_links[15], platform: Platform.find(Platform.first.id + 12))
+Game.create!(name: games[16], image_link: image_links[16], platform: Platform.find(Platform.first.id + 4))
+Game.create!(name: games[17], image_link: image_links[17], platform: Platform.find(Platform.first.id + 8))
+Game.create!(name: games[18], image_link: image_links[18], platform: Platform.find(Platform.first.id + 1))
+Game.create!(name: games[19], image_link: image_links[19], platform: Platform.find(Platform.first.id + 1))
+Game.create!(name: games[20], image_link: image_links[20], platform: Platform.find(Platform.first.id + 1))
+Game.create!(name: games[21], image_link: image_links[21], platform: Platform.find(Platform.first.id + 2))
+
+
+
+
+
+
+
+
+
 
 meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", description: "Best meetup in Montreal >:)", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:kojo, game:Game.find(Game.first.id + 1))
 meetup2 = Meetup.create!(title: "Kingdom Hearts battle", description: "My place only for 3 persons", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, date: Time.now + 2*60*60, user:martin, game:Game.find(Game.first.id + 3))
@@ -58,9 +82,4 @@ meetup8 = Meetup.create!(title: "Retro night at my house", description: "Everyon
 
 
 Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)
-Guest.create!(current_status:"Pending", user:alex, meetup:meetup3)
-
-
-
-
-
+Guest.create!(current_status:"Pending", user:elie, meetup:meetup3)

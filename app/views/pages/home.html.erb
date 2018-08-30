@@ -10,10 +10,9 @@
     </div> -->
   <div class="search-container">
     <%= form_tag meetups_path, {method: :get, :class => 'search-home'} do %>
+    <%= button_tag "",:class => 'fa fa-2x fa-search'%>
     <%= text_field_tag :query,
       params[:query],  placeholder: "Search for a game", class: "placeholder-search"%>
-      <a href=""></a>
-    <%= button_tag "",:class => 'fa fa-2x fa-search'%>
     <% end %>
   </div>
 </div>
@@ -33,17 +32,23 @@
 </div> -->
 
 
-
+<% count = 0 %>
+<div class="partition">
   <div class="container" >
     <div class="container-bottom">
-      <p class="container-cards">Browse Hangouts in Your Area</p>
-      <% @meetups.each do |meetup| %>
-    <div class="col-xs-3">
-      <%= render "shared/cards", meetup: meetup %>
-    </div>
+        <center> <p class="partition" style="font-size: 25px!important; margin: 0 !important">Browse Hangouts in Your Area</p> </center>
+        <% @meetups.each do |meetup| %>
+        <div class="col-xs-3" style="margin-bottom: 30px; margin-top: 0px;">
+          <%= render "shared/cards", meetup: meetup %>
+          <% count += 1 %>
+          <% if count == 4 %>
+          <% break %>
+          <% end %>
+        </div>
     <% end %>
     </div>
   </div>
+</div>
 <!--     <div
       id="map"
       style="width: 100%;
