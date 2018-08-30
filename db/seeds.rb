@@ -51,8 +51,3 @@ meetup3 = Meetup.create!(title: "Go play", description: "I have the cool office 
 
 Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)
 Guest.create!(current_status:"Pending", user:alex, meetup:meetup3)
-
-
-
-
-

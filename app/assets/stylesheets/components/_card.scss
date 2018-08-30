@@ -48,7 +48,34 @@ $open-sans: 'Open Sans', sans-serif;
    }
  }
 
+.card-attendees {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(61, 61, 61, 1);
+  border-radius: 2px;
+  padding: 10px 15px;
+  margin-top: 10px;
+}
 
+.card-attendees-picture {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 0 20%;
+  * {
+    margin: 0 !important;
+  }
+
+  p {
+    padding-left: 20px;
+    font-size: 22px;
+  }
+}
+
+.card-attendees-status {
+  flex: 0 0 30%;
+}
 
  // float: left;
  // padding: 0 1.7rem;
