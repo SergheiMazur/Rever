@@ -6,10 +6,8 @@
     <center> <h1>You have <%= pluralize(@meetups.count, "hangout") %> in your area.</h1> </center>
   </div>
 </div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
+<div class="container content-wrapper">
+    <div class="container">
       <div class="row">
         <% @meetups.each do |meetup| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
@@ -18,12 +16,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm-4 map-container">
-      <div
-        class = "map-details"
-        id="map"
-        data-markers="<%= @markers.to_json %>"
-      ></div>
+    <div class="map-container">
+        <div class = "map-details" id="map" data-markers="<%= @markers.to_json %>"></div>
     </div>
-  </div>
 </div>

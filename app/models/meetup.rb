@@ -8,6 +8,7 @@ class Meetup < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
+
   include PgSearch
 
   pg_search_scope :search_by_meetup_title_and_game_name,
