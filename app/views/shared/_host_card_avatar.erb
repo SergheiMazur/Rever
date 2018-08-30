@@ -1,17 +1,15 @@
 <div class="col-sm-12">
-<%= link_to user_profile_path(guest.user) do%>
-<div class="card-show-page" style="display: flex;  justify-content:space-between; ">
-  <div style="display: flex; justify-content: center; ">
-    <%= image_tag guest.user.imagelink, class: "avatar-lg" %>
-    <p><%= guest.user.fullname.capitalize %></p>
-  </div>
-
-    <div>
+  <div class="card-attendees">
+    <div class="card-attendees-picture">
+      <%= image_tag guest.user.imagelink, class: "avatar" %>
+      <p><%= guest.user.fullname.capitalize %></p>
+    </div>
+    <div class="card-attendees-status">
       <h4>Status: <span><%= guest.current_status %></span></h4>
     </div>
-        <%= link_to 'Accept',  accept_guest_path(guest) , class: "btn btn-primary custom-btn" %>
-        <%= link_to 'Reject',  reject_guest_path(guest) , class: "btn btn-primary custom-btn" %>
-
-</div>
-<% end %>
+    <div class="card-attendees-actions">
+      <%= link_to 'Accept', accept_guest_path(guest) , class: "btn btn-primary custom-btn custom-btn-thin", id: "accept" %>
+      <%= link_to 'Reject', reject_guest_path(guest) , class: "btn btn-primary custom-btn custom-btn-thin", id: "reject" %>
+    </div>
+  </div>
 </div>

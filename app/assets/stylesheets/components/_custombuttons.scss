@@ -107,3 +107,16 @@
 .table-borders {
   color: white;
 }
+
+.custom-btn-thin {
+  border: 2px solid #00FF00 !important;
+  margin-left: 10px;
+}
+
+#reject {
+  color: red;
+  border: 2px solid red !important;
+  &:hover {
+    box-shadow: 0 0 5px 0 red inset, 0 0 10px 1px red !important;
+  }
+}
