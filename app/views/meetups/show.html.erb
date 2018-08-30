@@ -61,12 +61,12 @@
     <div class="bottom-nav-content">
       <%= image_tag "rever.png", height: 50 %>
       <h2><%= @meetup.title.capitalize %></h2>
-      <%= link_to meetup_guests_path(@meetup), method: :post do %>
+    </div>
+    <%= link_to meetup_guests_path(@meetup), method: :post do %>
         <div class="rever_button">
           Book now
         </div>
       <% end %>
-    </div>
   </div>
 <% end %>
 
