@@ -44,13 +44,13 @@ Game.create!(name: games[8], image_link: image_links[8], platform: Platform.find
 
 
 
-# meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", description: "Best meetup in Montreal >:)", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:alex, game:Game.find(Game.first.id + 1))
-# meetup2 = Meetup.create!(title: "Kingdom Hearts battle", description: "My place only for 3 persons", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, date: Time.now + 2*60*60, user:alex, game:Game.find(Game.first.id + 3))
-# meetup3 = Meetup.create!(title: "Go play", description: "I have the cool office with drinks and coffee machine. Come to join my party :)", location: "Coopérative d'habitation du Châtelet, 5308A Av du Parc, Montréal, QC H2V 4G7", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:serghei, game:Game.find(Game.first.id + 2))
+meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", description: "Best meetup in Montreal >:)", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:alex, game:Game.find(Game.first.id + 1))
+meetup2 = Meetup.create!(title: "Kingdom Hearts battle", description: "My place only for 3 persons", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, date: Time.now + 2*60*60, user:alex, game:Game.find(Game.first.id + 3))
+meetup3 = Meetup.create!(title: "Go play", description: "I have the cool office with drinks and coffee machine. Come to join my party :)", location: "Coopérative d'habitation du Châtelet, 5308A Av du Parc, Montréal, QC H2V 4G7", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:serghei, game:Game.find(Game.first.id + 2))
 
 
-# Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)
-# Guest.create!(current_status:"Pending", user:alex, meetup:meetup3)
+Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)
+Guest.create!(current_status:"Pending", user:alex, meetup:meetup3)
 
 
 
