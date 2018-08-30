@@ -60,7 +60,9 @@ class MeetupsController < ApplicationController
   # POST /meetups
   def create
     @game = Game.find(params[:game_id])
+    @date = Date.strptime(params[:date], "%m/%d/%Y")
     @meetup = Meetup.new(meetup_params)
+    @meetup.date = @date
     @platforms = Platform.all
     @meetup.user = current_user
     @meetup.game = @game
