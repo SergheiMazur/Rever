@@ -1,6 +1,16 @@
 .profile-header {
+  font-weight: bold;
+  font-family: titillium;
   color: white;
+  align-text: center;
+  margin-bottom: 40px;
+
 }
+
+// .profilecards-container {
+//   width: 120%;
+//   alight-tems: center;
+// }
 
 .profile-wrapper {
   border: white;
@@ -14,12 +24,17 @@
 
 .meetup-card {
   background-color: #48474F;
+  margin: 2px 2px 30px 2px;
+  &:hover {
+    margin: 0px 0px 28px 0px;
+    border: 2px #00FF00 solid;
+  }
 }
 
 .top-flex {
   position: relative;
   color: #3D9970;
-  height: 150px;
+  height: 170px;
   background-color: #48474F;
 }
 
@@ -27,21 +42,23 @@
   border: solid 1px #00FF00;
   color: #00FF00;
   background-color: black;
-  height: 100px;
+  height: 150px;
   position: absolute;
   padding-left: 10px;
   padding-right: 10px;
   top: 10px;
   left: 10px;
-  width: 100px;
+  width: 150px;
   h1 {
-    margin-top: 0px;
-    border-bottom: solid 1px $green;
+    margin-top: -16px;
+    border-bottom: solid 2px #01FF70;
     margin-bottom: 0px;
+    font-size: 90px;
   }
   h2 {
-    margin-top: 0px;
+    margin-top: -10px;
     margin-bottom: 0px;
+    font-size: 57px;
   }
   text-align: center;
 }
@@ -51,23 +68,50 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  width: calc(100% - 140px);
+  width: calc(100% - 180px);
 }
 
 .middle-box {
   background-color: #48474F;
+  padding-left: 15px;
+
+  span {
+    font-size: 26px;
+    letter-spacing: 1px;
+
+  }
+}
+
+.bottom-box {
+  padding: 10px 0px;
+  margin-top: 18px;
+
+
+  h2 {
+    font-weight: bold;
+    font-family: titillium;
+    margin: 0;
+  }
 }
 
 .bottom-box-host {
   background-color: #00FF00;
   text-align: center;
+  font-size: 14px;
+
+  h2 {
+    color: black;
+  }
 }
 
 .bottom-box-guest {
-  background-color: #3D9970;
+  background-color: #525252;
   text-align: center;
 }
 
+.bottom-box-text {
+  font-size: 24px;
+}
 .meetup-time {
   color: white;
   font: 12px;
@@ -80,7 +124,39 @@
 
 .meetup-title {
   color: white;
-  font: 20px;
+  font-size: 34px;
   font-weight: bold;
 }
 
+.meetup-time2 {
+  color: #00FF00;
+}
+
+.meetup-time3 {
+  color: #00FF00;
+}
+
+.meetup-general {
+  font-family: razer;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0px;
+
+}
+
+.meetup-general2 {
+  font-family: titillium;
+  font-size: 18px;
+  font-weight: normal;
+  color: #00FF00;
+}
+
+.meetup-general3 {
+  font-family: titillium;
+  font-size: 28px;
+  font-weight: bold;
+  color: #00FF00;
+  letter-spacing: 0.7px;
+
+}
