@@ -160,3 +160,38 @@
   letter-spacing: 0.7px;
 
 }
+
+
+.left-flex-for-show-page {
+
+    border: solid 1px #00FF00;
+    color: #00FF00;
+    background-color: black;
+    height: 150px;
+    position: absolute;
+    padding-left: 7px;
+    padding-right: 9px;
+    top: 5px;
+    left: 0px;
+    width: 150px;
+    text-align: center;
+     h1 {
+    margin-top: -16px;
+    border-bottom: solid 2px #01FF70;
+    margin-bottom: 0px;
+    font-size: 90px;
+  }
+  h2 {
+    margin-top: -10px;
+    margin-bottom: 0px;
+    font-size: 57px;
+  }
+  text-align: center;
+}
+
+.top-flex-for-show-page {
+   position: relative;
+  // color: #3D9970;
+  height: 170px;
+  // background-color: #48474F;
+}
