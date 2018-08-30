@@ -1,5 +1,5 @@
 .block2 {
-  background-color: white;
+  background-color: gray;
   height: 100px;
 }
 
@@ -7,29 +7,31 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  background-color: gray;
 }
 
 
 .video-1 {
-  height: 50px;
+  height: 100px;
   flex: 1 1 100px;
   background-color: white;
 }
 
 .video-2 {
-  height: 50px;
+  height: 100px;
   flex: 1 1 100px;
   background-color: white;
 }
 
-.video3 {
-  height: 50px;
+.video-3 {
+  height: 100px;
   flex: 1 1 100px;
   background-color: white;
 }
 
-.video4 {
-  height: 50px;
+.video-4 {
+  height: 100px;
   flex: 1 1 100px;
   background-color: white;
 }

@@ -1,7 +1,6 @@
 <!-- Banner Start-->
 <div class="home">
   <div class= "header-container">
-    <div class="title1">Welcome to</div>
     <div class="title2">Rever</div>
     <div class="subtitle1">Games + Friends + Hangouts</div>
   </div>
@@ -23,29 +22,31 @@
   <p>Live-Look at User Hangouts</p>
   <div class="live-grid">
     <video class="video-1" src="n4s.mp4" autoplay="true" loop="true"></video>
-  </div>
-  <div class="live-grid">
+      <p>Alex</p>
+      <p>Buenos Aires, Argentina</p>
     <video class="video-2" src="cod.mp4" autoplay="true" loop="true"></video>
-  </div>
-  <div class="live-grid">
+      <p>Serghei</p>
+      <p>Montreal, Canada</p>
     <video class="video-3" src="fifa.mp4" autoplay="true" loop="true"></video>
-  </div>
-  <div class="live-grid">
+      <p>Ali</p>
+      <p>Sydney, Australia</p>
     <video class="video-4" src="smash.mp4" autoplay="true" loop="true"></video>
+      <p>Elie</p>
+      <p>Rome, Italy</p>
   </div>
 </div>
 
 
-<!--
+
 </div>
   <div class="container" >
     <div class="container-bottom">
       <p class="container-cards">Browse Hangouts in Your Area</p>
-      <#% @meetups.each do |meetup| %>
+      <% @meetups.each do |meetup| %>
     <div class="col-xs-3">
-      <%#= render "shared/cards", meetup: meetup %>
+      <%= render "shared/cards", meetup: meetup %>
     </div>
-    <#% end %>
+    <% end %>
     <div
       id="map"
       style="width: 100%;
