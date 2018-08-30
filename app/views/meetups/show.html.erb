@@ -47,16 +47,21 @@
       </div>
     </div>
   </div>
-
+  <% already_booked = false %>
   <p>Other attendees:</p>
   <div class="row">
     <% @meetup.guests.each do |guest| %>
-      <%= render "shared/card_avatar_profile", guest: guest %>
+        <% if current_user == @meetup.user %>
+          <%= render "shared/host_card_avatar", guest: guest %>
+        <% else %>
+          <%= render "shared/card_avatar_profile", guest: guest %>
+        <% end %>
+      <% already_booked = true if guest.user == current_user %>
     <% end %>
   </div>
 </div>
 
-<% if current_user != @meetup.user %>
+<% if current_user != @meetup.user && !already_booked %>
   <div class="bottom_nav" style="background-color: #3D3D3D;">
     <div class="bottom-nav-content">
       <%= image_tag "rever.png", height: 50 %>
