@@ -21,10 +21,10 @@
 }
 
 .search-container {
-  position: absolute;
-  top: 53%;
-  left: 42%;
-  width: 57%;
+  // position: absolute;
+  // top: 53%;
+  // left: 42%;
+  // width: 57%;
 }
 
 .container-bottom {
@@ -70,8 +70,10 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,,800,900);
 
 .header-container{
-  position:absolute;
-  @include center();
+  margin-top: 20vh;
+  margin-bottom: 50px;
+  // position:absolute;
+  // @include center();
   html {
   width:120%;
   height: 120%;
