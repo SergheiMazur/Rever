@@ -15,3 +15,10 @@
 @import "pages/index";
 @import "meetup";
 
+*::placeholder {
+    /* modern browser */
+    // color: #00FF00 !important;
+    color: white !important;
+    font-family: titillium !important;
+    opacity: 0.7  ;
+}

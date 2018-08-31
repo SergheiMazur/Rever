@@ -3,7 +3,7 @@
     <div class='col-sm-6'>
         <div class="form-group">
             <div class='input-group date' id='datetimepicker1'>
-                <input name="start_date" type='text' class="form-control" value="<%= params[:start_date] %>" />
+                <input name="start_date" type='text' class="form-control" value="<%= params[:start_date] %>" placeholder="from"/>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -13,7 +13,7 @@
     <div class='col-sm-6'>
         <div class="form-group">
             <div class='input-group date' id='datetimepicker2'>
-                <input name="end_date" type='text' class="form-control" value="<%= params[:end_date] %>"/>
+                <input name="end_date" type='text' class="form-control" value="<%= params[:end_date] %>" placeholder="until"/>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -24,13 +24,13 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="input-group bootstrap-timepicker timepicker form-group">
-        <input name="start_time" id="timepicker1" type="text" value="" class="form-control input-small">
+        <input name="start_time" id="timepicker1" type="text" value="" class="form-control input-small" placeholder="from">
         <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
       </div>
     </div>
     <div class="col-sm-6">
      <div class="input-group bootstrap-timepicker timepicker form-group">
-      <input name="end_time" id="timepicker2" type="text" value="" class="form-control input-small">
+      <input name="end_time" id="timepicker2" type="text" value="" class="form-control input-small" placeholder="until">
       <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
      </div>
     </div>
