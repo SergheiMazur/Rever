@@ -1,5 +1,11 @@
+
+<% if @meetup.user.fullname == "Alex-Oliver" %>
+<div class="banner" style="background-image: url(<%= asset_path("alexddr.png") %>)">
+</div>
+<% else %>
 <div class="banner" style="background-image: url(<%= asset_path("room1.png") %>)">
 </div>
+<% end %>
 <div class="container">
   <div class="flex-container">
     <div class="flex-container-left">
