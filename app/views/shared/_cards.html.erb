@@ -6,8 +6,10 @@
           <div class="content">
             <!-- <h1 class="title"><a> <center> <%= meetup.title %> </center></p> -->
               <div class="title">
-                <p class="button"> <%= meetup.title %> </p>
-                <p class="button"> Know More </p>
+                <p class="button4"> <%= meetup.title %> </p>
+                <div class="avatar4"><%= image_tag meetup.user.imagelink, class: "avatar-lg" %>></div>
+                <p class="hoster4"> <%= meetup.user.fullname %> </p>
+                <p class="button4"> Know More </p>
               </div>
           </div>
         </div>

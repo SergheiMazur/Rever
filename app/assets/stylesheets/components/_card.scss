@@ -33,6 +33,38 @@ $open-sans: 'Open Sans', sans-serif;
  font-weight: 700;
 }
 
+.button4 {
+  display: block;
+  width: 200px;
+  margin: 2em auto 1em;
+  text-align: center;
+  font-size: 18px !important;
+  color: $white;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+}
+
+
+.hoster4 {
+  display: block;
+  width: 200px;
+  text-align: center;
+  font-size: 14px !important;
+  color: $white;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+}
+
+.avatar4 {
+  height: 2px !important;
+  width: 2px !important;
+  border-radius: 50% !important;
+  margin: 0 0 0 0;
+}
+
+
 .data {
  color: $white;
  transform: translateY(calc(70px + 4em));
