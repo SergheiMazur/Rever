@@ -15,8 +15,8 @@ Platform.destroy_all
 User.destroy_all
 
 platforms = ["Atari Panther", "Nintendo 64", "Nintendo GameCube", "Nintendo Wii", "Nintendo Wii U", "Playstation 1", "Playstaion 2", "Playstation 3", "Playstation 4", "Sega Dreamcast", "Sega Genesis", "Super Nintendo", "Xbox", "Xbox 360", "Xbox One"]
-games = ["007: Agent Under Fire", "Mario Kart 64", "Grand Theft Auto V", "Kingdom Hearts", "Sonic the HedgeHog", "Fortnite", "Bioshock", "FIFA 18", "NBA 2k17", "The Legend of Zelda: Breath of the Wild", "World of Warcraft","Need for Speed", "Grand Theft Auto: Vice City", "Resident Evil V", "Dragon Ball Fighter Z", "Dance Dance Revolution: 3", "NHL 18", "Mario Kart 64", "The Legend of Zelda and the Ocarina of Time", "Pokemon Stadium", "Super Smash Bros. Melee", "Super Mario Bros."]
-image_links = ["agent_under_fire.jpg", "mario_kart_64.png", "gta_V.jpeg", "kingdom_hearts.jpg", "sonic_the_hedgehog.png", "fortnite.png", "bioschock.png", "FIFA18.png", "nba2k17.png", "zelda2.png", "wow.png", "n4s.png", "gtavc.png", "resevil.png", "dragonball.png", "ddr.png", "nhl18.png", "mariokart64.png", "zelda3.png", "pokemon.png", "smash2.png", "supermario.png"]
+games = ["Guitar Hero", "Mario Kart 64", "Grand Theft Auto V", "Kingdom Hearts", "Sonic the HedgeHog", "Fortnite", "Bioshock", "FIFA 18", "NBA 2k17", "The Legend of Zelda: Breath of the Wild", "World of Warcraft","Need for Speed", "Grand Theft Auto: Vice City", "Resident Evil V", "Dragon Ball Fighter Z", "Dance Dance Revolution: 3", "NHL 18", "Mario Kart 64", "The Legend of Zelda and the Ocarina of Time", "Pokemon Stadium", "Super Smash Bros. Melee", "Super Mario Bros.", "Mortal Kombat 3"]
+image_links = ["guitarhero.png", "mario_kart_64.png", "gta_V.jpeg", "kingdom_hearts.jpg", "sonic_the_hedgehog.png", "fortnite.png", "bioshock.png", "FIFA18.png", "nba2k17.png", "zelda2.png", "wow.png", "n4s.png", "gtavc.png", "resevil.png", "dragonball.png", "ddr.png", "nhl.png", "mariokart64.png", "zelda3.png", "pokemon.png", "smash2.png", "supermario.png", "mortalkombat.png"]
 
 
 alex = User.create!(email:"alex@rever.com", password:"qqqqqq", imagelink: "alex.png", fullname: "Alex-Oliver")
@@ -33,7 +33,19 @@ mg = User.create!(email:"mg@rever.com", password:"qqqqqq", imagelink: "mg.png", 
 stephanie = User.create!(email:"stephanie@rever.com", password:"qqqqqq", imagelink: "stephanie.png", fullname: "Stephanie")
 celine =  User.create!(email:"celine@rever.com", password:"qqqqqq", imagelink: "celine.png", fullname: "Celine")
 justin = User.create!(email:"justin@rever.com", password:"qqqqqq", imagelink: "justin.png", fullname: "Justin")
-konstantin = User.create!(email:"gabrielle@rever.com", password:"qqqqqq", imagelink: "konstantin.png", fullname: "Konstantin")
+konstantin = User.create!(email:"konstantin@rever.com", password:"qqqqqq", imagelink: "konstantin.png", fullname: "Konstantin")
+aaron = User.create!(email:"aaron@rever.com", password:"qqqqqq", imagelink: "aaron.png", fullname: "Aaron")
+alexg = User.create!(email:"alexg@rever.com", password:"qqqqqq", imagelink: "alexg.png", fullname: "Alex")
+caroline = User.create!(email:"caroline@rever.com", password:"qqqqqq", imagelink: "caroline.png", fullname: "Caroline")
+nordin = User.create!(email:"nordin@rever.com", password:"qqqqqq", imagelink: "nordin.png", fullname: "Nordin")
+aude = User.create!(email:"aude@rever.com", password:"qqqqqq", imagelink: "aude.png", fullname: "Aude")
+francois =  User.create!(email:"francois@rever.com", password:"qqqqqq", imagelink: "francois.png", fullname: "Francois")
+mark = User.create!(email:"mark@rever.com", password:"qqqqqq", imagelink: "mark.png", fullname: "Mark")
+michael = User.create!(email:"michael@rever.com", password:"qqqqqq", imagelink: "michael.png", fullname: "Michael")
+stephane = User.create!(email:"stephane@rever.com", password:"qqqqqq", imagelink: "stephane.png", fullname: "Stephane")
+furkan = User.create!(email:"furkan@rever.com", password:"qqqqqq", imagelink: "furkan.png", fullname: "Furkan")
+
+
 
 platforms.each do |platform|
   Platform.create!(name: platform)
@@ -61,30 +73,44 @@ Game.create!(name: games[18], image_link: image_links[18], platform: Platform.fi
 Game.create!(name: games[19], image_link: image_links[19], platform: Platform.find(Platform.first.id + 1))
 Game.create!(name: games[20], image_link: image_links[20], platform: Platform.find(Platform.first.id + 1))
 Game.create!(name: games[21], image_link: image_links[21], platform: Platform.find(Platform.first.id + 2))
+Game.create!(name: games[22], image_link: image_links[22], platform: Platform.find(Platform.first.id + 10))
 
 
+meetup1 = Meetup.create!(title: "Saturdays are for the boys", description: "Best meetup in Montreal >:)", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:kojo, game:Game.find(Game.first.id + 22))
+meetup14 = Meetup.create!(title: "FIFA, Rum and Poker $100 min", description: "Everyone welcome, BYOB!", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 154*60*60, date: Time.now, user:aude, game:Game.find(Game.first.id + 7))
+meetup16 = Meetup.create!(title: "Game all night, sleep all day", description: "My place is a little tight but maybe we could snuggle", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 148*60*60, date: Time.now, user:martin, game:Game.find(Game.first.id + 1))
+meetup4 = Meetup.create!(title: "Let's pretend it's the 90s :)", description: "My place is a little tight but maybe we could snuggle", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:sara, game:Game.find(Game.first.id + 4))
+meetup6 = Meetup.create!(title: "FORTNITE in my FORTRESS", description: "I'll be streaming I Love Lucy episodes", location: "3415 McTavish Street, Montreal, Quebec H3A 0C8", start_time: Time.now + 72*60*60, end_time: Time.now + 72*60*60, date: Time.now, user:everett, game:Game.find(Game.first.id + 10))
+meetup7 = Meetup.create!(title: "Pokemon Stadium Tournament", description: "I have a packed fridge full of food :)", location: "5333 Casgrain Ave, Montreal, QC H2T 1X3", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:celine, game:Game.find(Game.first.id + 19))
+meetup8 = Meetup.create!(title: "Retro night at my house", description: "Everyone welcome, BYOB!", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:sawyer, game:Game.find(Game.first.id + 21))
+meetup9 = Meetup.create!(title: "super SMASH tournament ;)", description: "My place is a little tight but maybe we could snuggle", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now + 32*60*60, end_time: Time.now + 35*60*60, date: Time.now, user:ali, game:Game.find(Game.first.id + 20))
+meetup5 = Meetup.create!(title: "Weekly 2k tournament", description: "(Congrats @h00plyf for victory)", location: "2027 Rue Saint Timothee, Montreal, H2L 3P5", start_time: Time.now + 72*60*60, end_time: Time.now + 75*60*60, date: Time.now, user:elie, game:Game.find(Game.first.id + 8))
+meetup11 = Meetup.create!(title: "Wed night, what else are you doing?", description: "I'll be streaming I Love Lucy episodes", location: "3415 McTavish Street, Montreal, Quebec H3A 0C8", start_time: Time.now + 72*60*60, end_time: Time.now + 72*60*60, date: Time.now, user:francois, game:Game.find(Game.first.id + 18))
+meetup10 = Meetup.create!(title: "*Need for Speed* Loser gets Dinner.", description: "Looking to play tournament style", location: "2027 Rue Saint Timothee, Montreal, H2L 3P5", start_time: Time.now + 72*60*60, end_time: Time.now + 75*60*60, date: Time.now, user:michael, game:Game.find(Game.first.id + 11))
+meetup18 = Meetup.create!(title: "Weekly bro time", description: "I'll be streaming I Love Lucy episodes", location: "3415 McTavish Street, Montreal, Quebec H3A 0C8", start_time: Time.now + 72*60*60, end_time: Time.now + 72*60*60, date: Time.now, user:justin, game:Game.find(Game.first.id + 5))
+meetup12 = Meetup.create!(title: "DDR! BYOB!", description: "Everyone welcome, BYOB!", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 154*60*60, date: Time.now, user:caroline, game:Game.find(Game.first.id + 15))
+meetup13 = Meetup.create!(title: "Pushup tournament + game nite", description: "I have a packed fridge full of food :)", location: "5333 Casgrain Ave, Montreal, QC H2T 1X3", start_time: Time.now, end_time: Time.now + 109*60*60, date: Time.now, user:guillaume, game:Game.find(Game.first.id + 12))
+meetup17 = Meetup.create!(title: "**NHL and BEER**", description: "Looking to play tournament style", location: "2027 Rue Saint Timothee, Montreal, H2L 3P5", start_time: Time.now + 72*60*60, end_time: Time.now + 75*60*60, date: Time.now, user:stephane, game:Game.find(Game.first.id + 16))
+meetup19 = Meetup.create!(title: "Guitar Hero Night!", description: "I have a packed fridge full of food :)", location: "5333 Casgrain Ave, Montreal, QC H2T 1X3", start_time: Time.now, end_time: Time.now + 109*60*60, date: Time.now, user:nordin, game:Game.find(Game.first.id + 0))
+meetup3 = Meetup.create!(title: "Tournois de FIFA 18", description: "Come join my fornight office party (we have a keg!) :)", location: "Coopérative d'habitation du Châtelet, 5308A Av du Parc, Montréal, QC H2V 4G7", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:mg, game:Game.find(Game.first.id + 7))
+meetup20 = Meetup.create!(title: "Rever and CHILL?", description: "Everyone welcome, BYOB!", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 154*60*60, date: Time.now, user:aaron, game:Game.find(Game.first.id + 6))
+meetup15 = Meetup.create!(title: "Retro night at my house ☮", description: "Everyone welcome, BYOB!", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:sawyer, game:Game.find(Game.first.id + 3))
+meetup2 = Meetup.create!(title: "Zelda lovers unite", description: "My place only for 3 persons", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, date: Time.now + 2*60*60, user:furkan, game:Game.find(Game.first.id + 9))
 
 
-
-
-
-
-
-
-meetup1 = Meetup.create!(title: "Let's play Mario Kart 64", description: "Best meetup in Montreal >:)", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:kojo, game:Game.find(Game.first.id + 1))
-meetup2 = Meetup.create!(title: "Kingdom Hearts battle", description: "My place only for 3 persons", location: "LMVR-Le Laurier, 286 Avenue Laurier O, Montreal, QC H2V 2K2", start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, date: Time.now + 2*60*60, user:martin, game:Game.find(Game.first.id + 3))
-meetup3 = Meetup.create!(title: "FORNITE SHOWDOWN", description: "Come join my fornight office party (we have a keg!) :)", location: "Coopérative d'habitation du Châtelet, 5308A Av du Parc, Montréal, QC H2V 4G7", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:elie, game:Game.find(Game.first.id + 7))
-meetup4 = Meetup.create!(title: "Let's pretend it's the 80s ☮", description: "My place is a little tight but maybe we could snuggle", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:ali, game:Game.find(Game.first.id + 4))
-meetup5 = Meetup.create!(title: "Anyone want to run some 2k?", description: "Looking to play tournament style", location: "2027 Rue Saint Timothee, Montreal, H2L 3P5", start_time: Time.now + 72*60*60, end_time: Time.now + 75*60*60, date: Time.now, user:elie, game:Game.find(Game.first.id + 8))
-meetup6 = Meetup.create!(title: "Videogames and movie night", description: "I'll be streaming I Love Lucy episodes", location: "3415 McTavish Street, Montreal, Quebec H3A 0C8", start_time: Time.now + 72*60*60, end_time: Time.now + 72*60*60, date: Time.now, user:everett, game:Game.find(Game.first.id + 10))
-meetup7 = Meetup.create!(title: "Pokemon Stadium Tournament", description: "I have a packed fridge full of food :)", location: "5333 Casgrain Ave, Montreal, QC H2T 1X3", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:celine, game:Game.find(Game.first.id + 18))
-meetup8 = Meetup.create!(title: "Retro night at my house", description: "Everyone welcome, BYOB!", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5", start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:sawyer, game:Game.find(Game.first.id + 20))
-
-
-Guest.create!(current_status:"Pending", user:serghei, meetup:meetup1)
+Guest.create!(current_status:"Pending", user:justin, meetup:meetup1)
 Guest.create!(current_status:"Pending", user:mg, meetup:meetup3)
-Guest.create!(current_status:"Pending", user:stephanie, meetup:meetup3)
-Guest.create!(current_status:"Pending", user:serghei, meetup:meetup3)
-Guest.create!(current_status:"Pending", user:ali, meetup:meetup3)
+Guest.create!(current_status:"Pending", user:francois, meetup:meetup3)
+Guest.create!(current_status:"Pending", user:martin, meetup:meetup3)
+Guest.create!(current_status:"Pending", user:celine, meetup:meetup3)
+Guest.create!(current_status:"Pending", user:everett, meetup:meetup3)
 Guest.create!(current_status:"Pending", user:konstantin, meetup:meetup3)
-
+Guest.create!(current_status:"Pending", user:sara, meetup:meetup2)
+Guest.create!(current_status:"Pending", user:justin, meetup:meetup6)
+Guest.create!(current_status:"Pending", user:mg, meetup:meetup8)
+Guest.create!(current_status:"Pending", user:francois, meetup:meetup19)
+Guest.create!(current_status:"Pending", user:martin, meetup:meetup14)
+Guest.create!(current_status:"Pending", user:celine, meetup:meetup11)
+Guest.create!(current_status:"Pending", user:everett, meetup:meetup5)
+Guest.create!(current_status:"Pending", user:konstantin, meetup:meetup6)
+Guest.create!(current_status:"Pending", user:sara, meetup:meetup8)
