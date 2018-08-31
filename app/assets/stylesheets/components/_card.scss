@@ -33,6 +33,40 @@ $open-sans: 'Open Sans', sans-serif;
  font-weight: 700;
 }
 
+.button4 {
+  display: block;
+  width: 200px;
+  margin: 0;
+  text-align: center;
+  font-size: 18px !important;
+  color: $white;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+}
+
+
+.hoster4 {
+  display: block;
+  width: 200px;
+  text-align: center;
+  font-size: 14px !important;
+  color: $white;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+  margin: 0 0 0 0;
+}
+
+.avatar4 {
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 50% !important;
+  border: #00FF00 2px solid;
+  margin: 0 0 0 0;
+}
+
+
 .data {
  color: $white;
  transform: translateY(calc(70px + 4em));
@@ -45,6 +79,10 @@ $open-sans: 'Open Sans', sans-serif;
      font-size: 15px;
      text-decoration: none;
      justify-content: center;
+   }
+
+   & > div {
+     display: flex;
    }
  }
 
@@ -127,8 +165,9 @@ $open-sans: 'Open Sans', sans-serif;
    }
  }
  .data {
+   height: 136px;
    position: absolute;
-   bottom: 0;
+   bottom: 3px;
    width: 100%;
    transform: translateY(calc(70px + 1em));
    transition: transform 0.3s;

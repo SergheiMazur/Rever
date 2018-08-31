@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $(".title2").css({"background-position": traX + "%" + traY + "%"});
   });
 
-  const words = ["hangouts", "beers", "tournaments", "good times", "fedoras", "call of duty", "xbox one", "fifa 18", "competition", "fun", "grand theft auto", "zelda", "minecraft", "tetris"];
+  const words = ["hangouts", "beers", "tournaments", "good times", "fedoras", "sega genesis", "fornite", "N64", "call of duty", "xbox one", "fifa 18", "competition", "fun", "grand theft auto", "zelda", "minecraft", "tetris"];
   let wordCounter = 0;
   const subTitle = document.querySelector(".subtitle1");
 
