@@ -36,7 +36,7 @@ $open-sans: 'Open Sans', sans-serif;
 .button4 {
   display: block;
   width: 200px;
-  margin: 2em auto 1em;
+  margin: 0;
   text-align: center;
   font-size: 18px !important;
   color: $white;
@@ -55,12 +55,14 @@ $open-sans: 'Open Sans', sans-serif;
   line-height: 1;
   position: relative;
   font-weight: 700;
+  margin: 0 0 0 0;
 }
 
 .avatar4 {
-  height: 2px !important;
-  width: 2px !important;
+  height: 40px !important;
+  width: 40px !important;
   border-radius: 50% !important;
+  border: #00FF00 2px solid;
   margin: 0 0 0 0;
 }
 
@@ -77,6 +79,10 @@ $open-sans: 'Open Sans', sans-serif;
      font-size: 15px;
      text-decoration: none;
      justify-content: center;
+   }
+
+   & > div {
+     display: flex;
    }
  }
 
@@ -159,8 +165,9 @@ $open-sans: 'Open Sans', sans-serif;
    }
  }
  .data {
+   height: 136px;
    position: absolute;
-   bottom: 0;
+   bottom: 3px;
    width: 100%;
    transform: translateY(calc(70px + 1em));
    transition: transform 0.3s;
