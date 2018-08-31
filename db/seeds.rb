@@ -77,9 +77,9 @@ Game.create!(name: games[22], image_link: image_links[22], platform: Platform.fi
 
 
 meetup1 = Meetup.create!(title: "Saturdays are for the boys", description: "Best meetup in Montreal >:)", location: "1175 Avenue Laurier O, Outremont, QC H2V 3R5",
-    start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:kojo, game:Game.find(Game.first.id + 22))
+    start_time: Date.tomorrow + 18.hour, end_time: Date.tomorrow + 21.hour, date: Date.tomorrow, user:kojo, game:Game.find(Game.first.id + 22))
 meetup14 = Meetup.create!(title: "FIFA, Rum and Poker $100 min", description: "Everyone welcome, BYOB!", location: "2022 Rue Centre, Montreal, QC H3K 1J3",
-    start_time: Time.now, end_time: Time.now + 154*60*60, date: Time.now, user:aude, game:Game.find(Game.first.id + 7))
+    start_time: Date.tomorrow + 18.hour, end_time: Date.tomorrow + 21.hour, date: Date.tomorrow, user:aude, game:Game.find(Game.first.id + 7))
 meetup16 = Meetup.create!(title: "Game all night, sleep all day", description: "My place is a little tight but maybe we could snuggle", location: "1306 Rue Bélanger, Montreal, QC H2G 1A1",
     start_time: Time.now, end_time: Time.now + 148*60*60, date: Time.now, user:konstantin, game:Game.find(Game.first.id + 1))
 meetup4 = Meetup.create!(title: "Let's pretend it's the 90s :)", description: "My place is a little tight but maybe we could snuggle", location: "2285 Rue Saint-Mathieu, Montreal, QC H3H 2J7",
@@ -113,9 +113,9 @@ meetup3 = Meetup.create!(title: "Tournois de FIFA 18", description: "Come join m
 meetup20 = Meetup.create!(title: "Rever and CHILL?", description: "Everyone welcome, BYOB!", location: "1115 Rue Sherbrooke O, Montreal, QC H3A 1H3",
     start_time: Time.now, end_time: Time.now + 154*60*60, date: Time.now, user:aaron, game:Game.find(Game.first.id + 6))
 meetup15 = Meetup.create!(title: "Retro night at my house ☮", description: "Everyone welcome, BYOB!", location: "5184 Rue Beaubien E, Montreal, QC H1T 1W1",
-    start_time: Time.now, end_time: Time.now + 1*60*60, date: Time.now, user:sawyer, game:Game.find(Game.first.id + 3))
+    start_time: Date.tomorrow + 18.hour, end_time: Date.tomorrow + 21.hour, date: Date.tomorrow, user:sawyer, game:Game.find(Game.first.id + 3))
 meetup2 = Meetup.create!(title: "Zelda lovers unite", description: "My place only for 3 persons", location: "812 Avenue du Mont-Royal E, Montreal, QC H2J 1W8",
-    start_time: Time.now + 2*60*60, end_time: Time.now + 4*60*60, date: Time.now + 2*60*60, user:furkan, game:Game.find(Game.first.id + 9))
+    start_time: Date.tomorrow + 18.hour, end_time: Date.tomorrow + 21.hour, date: Date.tomorrow, user:furkan, game:Game.find(Game.first.id + 9))
 
 
 Guest.create!(current_status:"Pending", user:justin, meetup:meetup1)
