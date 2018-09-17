@@ -2,10 +2,8 @@ class MeetupsController < ApplicationController
   before_action :set_meetup, only: [:show, :edit, :update, :destroy, :book]
   skip_before_action :authenticate_user!, :only => [:index]
 
-  # GET /meetups
   def index
 
-    # raise
     @meetups = Meetup.all
 
     if params[:query].present?
@@ -33,7 +31,6 @@ class MeetupsController < ApplicationController
     end
   end
 
-  # GET /meetups/1
   def show
     @guests = Guest.where(meetup: @meetup)
     @meetups = @meetup.user.meetups
@@ -47,17 +44,15 @@ class MeetupsController < ApplicationController
     ]
   end
 
-  # GET /meetups/new
   def new
     @meetup = Meetup.new
     @platforms = Platform.all
   end
 
-  # GET /meetups/1/edit
   def edit
   end
 
-  # POST /meetups
+
   def create
     @game = Game.find(params[:game_id])
     @date = Date.strptime(params[:date], "%m/%d/%Y")
@@ -91,7 +86,6 @@ class MeetupsController < ApplicationController
   end
 
 
-  # DELETE /meetups/1
   def destroy
     @meetup.destroy
     redirect_to meetups_url, notice: 'Meetup was successfully destroyed.'
